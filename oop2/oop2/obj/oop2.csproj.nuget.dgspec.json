@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\лабы\\ООП\\2 лаба\\oop2\\oop2\\oop2.csproj": {}
+    "F:\\лабы\\ООП\\labs\\oop2\\oop2\\oop2.csproj": {}
   },
   "projects": {
-    "F:\\лабы\\ООП\\2 лаба\\oop2\\oop2\\oop2.csproj": {
+    "F:\\лабы\\ООП\\labs\\oop2\\oop2\\oop2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\лабы\\ООП\\2 лаба\\oop2\\oop2\\oop2.csproj",
+        "projectUniqueName": "F:\\лабы\\ООП\\labs\\oop2\\oop2\\oop2.csproj",
         "projectName": "oop2",
-        "projectPath": "F:\\лабы\\ООП\\2 лаба\\oop2\\oop2\\oop2.csproj",
+        "projectPath": "F:\\лабы\\ООП\\labs\\oop2\\oop2\\oop2.csproj",
         "packagesPath": "C:\\Users\\XE\\.nuget\\packages\\",
-        "outputPath": "F:\\лабы\\ООП\\2 лаба\\oop2\\oop2\\obj\\",
+        "outputPath": "F:\\лабы\\ООП\\labs\\oop2\\oop2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XE\\AppData\\Roaming\\NuGet\\NuGet.Config",

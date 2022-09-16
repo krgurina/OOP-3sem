@@ -134,7 +134,7 @@ namespace oop2
         }
 
         // полный конструктор с параметрами по умолчанию 
-        public Student(string aSurname, string aName, string aFathername, string aDateOfBirth, string aAddress, ulong aPhoneNumber, string aFaculty = "FIT", int aCourse = 2, int aGroup = 4)
+        public Student(string aSurname, string aName, string aFathername, string aDateOfBirth, string aAddress, ulong aPhoneNumber, string aFaculty = "ФИТ", int aCourse = 2, int aGroup = 4)
         {
             surname = aSurname;
             name = aName;
@@ -150,15 +150,15 @@ namespace oop2
         }
 
         // закрытый конструктор
-        private Student(string aSurname, string aName, string aFathername, ulong aPhoneNumber)
+        private Student(string aSurname, string aName, string aFathername)
         {
             surname = aSurname;
             name = aName;
             fathername = aFathername;
-            phoneNumber = aPhoneNumber;
             numberOfStudents++;
             id = this.GetHashCode();
         }
+
 
         // cтатический конструктор 
         static Student()
@@ -168,31 +168,32 @@ namespace oop2
 
 
         // метод расчет возраста 
-        public int getAge(string dateOfBirth)
+        public void getAge(string dateOfBirth)
         {
             var date = DateTime.ParseExact(dateOfBirth, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             var age = DateTime.Now.Year - date.Year;
 
             if (DateTime.Now.Month < date.Month ||
                (DateTime.Now.Month == date.Month && DateTime.Now.Day < date.Day)) age--;
-            return age;
+            Console.WriteLine($"Возраст: {age} ");
+
         }
 
 
-        // метод для вывода инфы
-        public void PrintInfo()
+        // статический метод для вывода информации
+        public static void PrintInfo(Student student)
         {
             Console.WriteLine();
-            Console.WriteLine("Фамилия: " + Surname + "\nИмя: " + Name + "\nОтчество: " + Fathername);
-            Console.WriteLine("Год рождения: " + DateOfBirth + "\nАдрес: " + Address + "\nТелефон: " + PhoneNumber);
-            Console.WriteLine("Факультет: " + Faculty + "\nКурс: " + Course + "\nГруппа: " + Group);
-            Console.WriteLine("Униальный номер (ID)" + id);
+            Console.WriteLine("Фамилия: " + student.Surname + "\nИмя: " + student.Name + "\nОтчество: " + student.Fathername);
+            Console.WriteLine("Год рождения: " + student.DateOfBirth + "\nАдрес: " + student.Address + "\nТелефон: " + student.PhoneNumber);
+            Console.WriteLine("Факультет: " + student.Faculty + "\nКурс: " + student.Course + "\nГруппа: " + student.Group);
+            Console.WriteLine("Униальный номер (ID)" + student.id);
         }
 
-        // использование ref-параметра
-        public static void AllStudents(ref int all)
+        //ref-параметры
+        public void GetSurname(ref string sname)
         {
-            Console.WriteLine($"Всего студентов: {all}");
+            Console.WriteLine($"Фамилия: {sname}");
         }
 
 
@@ -211,7 +212,7 @@ namespace oop2
 
         public override int GetHashCode()          
         {
-            return PhoneNumber.GetHashCode();
+            return Surname.GetHashCode()+ PhoneNumber.GetHashCode();
         }
 
 
