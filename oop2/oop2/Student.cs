@@ -115,8 +115,14 @@ namespace oop2
             surname = "Неизвестно";
             name = "Неизвестно";
             fathername = "Неизвестно";
-            address = "Неизвестно"; 
+
+
+            dateOfBirth = "Неизвестно";
+            address = "Неизвестно";
+            phoneNumber = 0;
             faculty = "Неизвестно";
+            course = 0;
+            group = 0;
             numberOfStudents++;
             id = this.GetHashCode();
         }
@@ -218,7 +224,7 @@ namespace oop2
 
         public override string ToString()
         {
-            return $"Фамилия: {Surname}, Имя: {Name}, Отчество: {Fathername} ";
+            return $"{Surname} {Name} {Fathername}";
         }
 
 
