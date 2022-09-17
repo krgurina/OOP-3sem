@@ -1,7 +1,5 @@
 ﻿using System;
 
-
-
 /*Создать класс Student: id, Фамилия, Имя, Отчество, 
 Дата рождения, Адрес, Телефон, Факультет, Курс, 
 Группа. Свойства и конструкторы должны обеспечивать 
@@ -13,11 +11,12 @@ a) список студентов заданного факультета;
 d) список учебной группы*/
 namespace oop2
 {
-
     class Program
     {
         static void Main(string[] args)
         {
+            // статический конструктор
+            Student zero = new Student();
             // 2 задание
             Student student1 = new Student();
             Console.WriteLine("\n  Объект, созданный конструктором по умолчанию:");
@@ -44,32 +43,24 @@ namespace oop2
             Student student6 = new Student("Ковалёва", "Анна", "Юрьевна", "14.04.2004", "Белорусская 21", 297927777);
             Console.WriteLine("\n  Объект, созданный конструктором с параметрами по умолчанию:");
             Student.PrintInfo(student6);
-            // вызов закрытого класса
-            //Student student5 = new Student("Иванов", "Иван", "Иванович");    // без параметров
-            //Console.WriteLine("\n  Объект, созданный вторым конструктором:");
-            //student2.PrintInfo();
 
 
-
+            //  ref - и out-параметры
             string sname = student3.Surname;
             Console.WriteLine("\nref-параметры: ");
             student3.GetSurname(ref sname);
 
-            // переменная статического конструктора
-            Console.WriteLine(Student.numberOfStudents);
-
+            string university;
+            student3.GetUniversity(out university);
+            Console.WriteLine($"\nout-параметры: {university}");
 
 
             Console.WriteLine($"\nСравнение двух объектов: {student3.Equals(student4)}");
             Console.WriteLine($"Сравнение двух объектов: {student5.Equals(student4)}");
-
             Console.WriteLine($"\nТип 1 студента - {student1.GetType()}");
-
             Console.WriteLine($"\nToStrin для 2 студента - {student2.ToString()}");
 
-
             // 3 задание 
-
             Student[] StudentArr = new Student[6];
             StudentArr[0] = student1;
             StudentArr[1] = student2;
@@ -84,13 +75,17 @@ namespace oop2
                 Console.WriteLine(StudentArr[i]);
             }
 
-
-
             // метод для вызова поиска по факультету
             FindStudentsOfFaculty(StudentArr);
             // метод для вызова поиска по группе
             FindStudentsOfGroup(StudentArr);
 
+            // статический метод для количества студентов
+            Student.PrintNumberOfStudent();
+
+            // анонимный тип
+            var user = new { Name = "Евгения", Surname = "Коктыш" };
+            Console.WriteLine($"Имя: {user.Name}\nФамилия: {user.Surname}\n");
 
             // поиск студента заданного факультета 
             static void FindStudentsOfFaculty(Student[] StudentArr)
@@ -110,7 +105,6 @@ namespace oop2
                 if (!isOrNot)
                 {
                     Console.WriteLine("Нет студентов заданного факультета");
-
                 }
             }
 
@@ -141,9 +135,6 @@ namespace oop2
                     Console.WriteLine("Нет студентов заданной группы");
                 }
             }
-
-
-
 
 
         }

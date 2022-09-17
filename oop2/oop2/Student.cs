@@ -115,8 +115,6 @@ namespace oop2
             surname = "Неизвестно";
             name = "Неизвестно";
             fathername = "Неизвестно";
-
-
             dateOfBirth = "Неизвестно";
             address = "Неизвестно";
             phoneNumber = 0;
@@ -169,7 +167,7 @@ namespace oop2
         // cтатический конструктор 
         static Student()
         {
-            Console.WriteLine($" Количество студентов: {numberOfStudents} ");
+            Console.WriteLine(" Статический конструктор");
         }
 
 
@@ -196,12 +194,21 @@ namespace oop2
             Console.WriteLine("Униальный номер (ID)" + student.id);
         }
 
+        // статический метод вывода количества студентов 
+        public static void PrintNumberOfStudent()
+        {
+            Console.WriteLine($" Количество студентов: {numberOfStudents} ");
+        }
+
         //ref-параметры
         public void GetSurname(ref string sname)
         {
             Console.WriteLine($"Фамилия: {sname}");
         }
-
+        public void GetUniversity(out string result)
+        {
+            result = "БГТУ";
+        }
 
         // переопределение методов класса Object
         public override bool Equals(object obj)  
