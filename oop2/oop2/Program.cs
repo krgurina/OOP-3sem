@@ -16,7 +16,6 @@ namespace oop2
         static void Main(string[] args)
         {
             // статический конструктор
-            Student zero = new Student();
             // 2 задание
             Student student1 = new Student();
             Console.WriteLine("\n  Объект, созданный конструктором по умолчанию:");

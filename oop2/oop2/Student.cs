@@ -213,8 +213,9 @@ namespace oop2
         // переопределение методов класса Object
         public override bool Equals(object obj)  
         {
-            if (obj == null)
-                return false;
+            if (obj == null) return false;
+            if (obj.GetType() != this.GetType()) return false;
+
             Student stud = obj as Student;
             if (stud == null)
                 return false;
@@ -225,7 +226,10 @@ namespace oop2
 
         public override int GetHashCode()          
         {
-            return Surname.GetHashCode()+ PhoneNumber.GetHashCode();
+            int hash = 269;
+            hash = string.IsNullOrEmpty(Surname) ? 0 : Surname.GetHashCode();
+            hash = (hash * 47) + Course.GetHashCode();
+            return hash;
         }
 
 

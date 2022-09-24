@@ -7,20 +7,7 @@ namespace oop3
 {
     class List
     {
-        public class Developer
-        {
-            public int id;
-            public string DevName;
-            public string department;
-
-            public Developer(int id, string DevName, string department)
-            {
-                this.id = id;
-                this.DevName = DevName;
-                this.department = department;
-
-            }
-        }
+        
 
         public List()
         {
@@ -59,10 +46,77 @@ namespace oop3
             set => this.MyList[index] = value;
         }
 
+        // перегрузка
+        // >> - удалить элемент в заданной позиции
+        public static List operator >>(List list, int position)
+        {
+            list.RemoveAtPos(position);
+            return list;
+        }
+
+        // + - добавить элемент
+        public static List operator +(List list, int element)
+        {
+            list.AddItem(element);
+            return list;
+        }
+
+        public static bool operator !=(List list1, List list2)
+        {
+            return !list1.Equals(list2);
+        }
+
+        public static bool operator ==(List list1, List list2)
+        {
+            return list1.Equals(list2);
+        }
+
+        /////////////////////////////////////////////
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj.GetType() != this.GetType()) return false;
+
+            List listItem = (List)obj;
+            return this.MyList == listItem.MyList && this.Count == listItem.Count;
+        }
+
+        //public override bool Equals(object obj)
+        //{
+        //    if (obj == null) return false;
+        //    if (obj.GetType() != this.GetType()) return false;
+
+        //    if (obj is List)
+        //    {
+        //        List tmp = (List)obj;
+
+        //        foreach (int item1 in this.MyList)
+        //        {
+        //            foreach (int item2 in tmp.MyList)
+        //            {
+        //                if (item1 != item2)
+        //                {
+        //                    return false;
+        //                }
+        //            }
+        //        }
+        //        return true;
+        //    }
+        //    return false;
+        //}
+        /////////////////////////////////////
+        public override int GetHashCode()
+        {
+            return Count.GetHashCode();
+        }
+
+       
 
 
 
 
 
-    }
+
+
+        }
 }
