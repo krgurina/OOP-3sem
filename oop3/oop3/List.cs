@@ -5,13 +5,33 @@ using System.Collections.Generic;
 
 namespace oop3
 {
-    class List
+    public class List
     {
-        
+        //вложенный объект 
+        public Production production;
+        public class Developer
+        {
+            public int id = 0;
+            public string DevName;
+            public string department;
+
+            public Developer(string DevName, string department)
+            {
+                id++;
+                this.DevName = DevName;
+                this.department = department;
+
+            }
+            public void ShowInfoDev()
+            {
+                Console.WriteLine($"Разработчик: {DevName} \nОтдел: {department}");
+            }
+        }
 
         public List()
         {
             this.MyList = new List<int>();
+            this.production = new Production("ХМЛ");
         }
 
         public List<int> MyList { get; set; }
@@ -63,12 +83,58 @@ namespace oop3
 
         public static bool operator !=(List list1, List list2)
         {
-            return !list1.Equals(list2);
+            if (list1.Count != list2.Count) return true;
+
+
+
+            // 1
+            //bool isEqual = Enumerable.SequenceEqual(list1, list2);
+            //if (isEqual)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    return true;
+            //}
+
+            // 2
+            //for (int i = 0; i < list1.Count; i++)
+            //{
+            //    for (int j = 0; i < list2.Count; j++)
+            //    {
+            //        if (list1[i] == list2[j])
+            //            continue;
+            //        else return true;
+            //    }
+            //}
+            //return false;
+
+            //3
+            //return !list1.Equals(list2);
+
+            //4
+            // true если сравнить с самим союой 
+            return !Object.ReferenceEquals(list1, list2);
         }
 
         public static bool operator ==(List list1, List list2)
         {
-            return list1.Equals(list2);
+            if (list1 != list2) return false;
+            else return true;
+
+            //for (int i = 0; i < list1.Count; i++)
+            //{
+            //    for (int j = 0; i < list2.Count; j++)
+            //    {
+            //        if (list1[i] == list2[j])
+            //            continue;
+            //        else return false;
+            //    }
+            //}
+            //return true;
+
+            //return list1.Equals(list2);
         }
 
         /////////////////////////////////////////////

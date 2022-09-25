@@ -11,6 +11,8 @@ namespace oop3
             List myList2 = new List();
             List myList3 = new List();
 
+            //Production pr = new Production("e");
+            
             myList1 = myList1 + 1;
             myList1 = myList1 + 19;
             myList1 = myList1 + 27;
@@ -30,14 +32,21 @@ namespace oop3
             myList3 = myList3 + 21;
 
 
-            Console.WriteLine("\nmyList1[0] != myList2[0] : " + (myList1[0] != myList2[0]));    //проверка на неравенство множеств
-            Console.WriteLine("myList2[0] = myList3[0] : " + (myList2[0] == myList3[0]));   //проверка на равенство множеств
+            //Console.WriteLine("\nmyList1[0] != myList2[0] : " + (myList1[0] != myList2[0]));    //проверка на неравенство множеств
+            //Console.WriteLine("myList2[0] = myList3[0] : " + (myList2[0] == myList3[0]));   //проверка на равенство множеств
 
             //пофиксить
             Console.WriteLine("\nList1 != List2 : " + (myList1 != myList2));    //проверка на неравенство множеств
-            //Console.WriteLine("List2 = List3 : " + (myList1 == myList3));   //проверка на равенство множеств
+            Console.WriteLine("List2 = List3 : " + (myList2 == myList3));   //проверка на равенство множеств
 
-          
+
+            List.Developer dev = new List.Developer("Кристина", "ФИТ");
+            myList1.production = new Production("БГТУ");
+
+            
+
+
+
 
         }
     }
