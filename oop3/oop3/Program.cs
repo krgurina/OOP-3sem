@@ -43,7 +43,10 @@ namespace oop3
             List.Developer dev = new List.Developer("Кристина", "ФИТ");
             myList1.production = new Production("БГТУ");
 
-            
+            StatisticOperation.GetSum(myList2);
+            StatisticOperation.MinMaxDifference(myList2);
+            StatisticOperation.GetCount(myList2);
+
 
 
 
