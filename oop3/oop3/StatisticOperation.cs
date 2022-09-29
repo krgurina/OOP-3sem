@@ -1,5 +1,5 @@
 ﻿using System;
-//using System.Linq;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,8 +24,6 @@ namespace oop3
             {
                 if (minItem > list[i])
                     minItem = list[i];
-                //Console.WriteLine($"Min: {minItem}");
-
             }
             return minItem;
         }
@@ -38,8 +36,6 @@ namespace oop3
             {
                 if (maxItem < list[i])
                     maxItem = list[i];
-                //Console.WriteLine($"Min: {minItem}");
-
             }
             return maxItem;
         }
@@ -54,5 +50,27 @@ namespace oop3
             Console.WriteLine($"Количество элементов списка: {list.Count}");
         }
 
+        // методы расширения
+        public static string MaxLength(this string[] str)  //поиск самого длинного слова
+        {
+
+            int max = str[0].Length;
+            int k = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (max <= str[i].Length)
+                {
+                    max = str[i].Length;
+                    k = i;
+                }
+            }
+            return str[k];
+        }
+
+        public static List Del(this List list)  //удаление последнего элемента
+        {
+            list.RemoveItem();
+            return list;
+        }
     }
 }
