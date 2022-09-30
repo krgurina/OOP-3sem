@@ -102,7 +102,7 @@ namespace oop2
             }
         }
 
-
+        // статические поле
         public static short numberOfStudents = 0;
 
         // поле-констанста 
@@ -154,14 +154,7 @@ namespace oop2
         }
 
         // закрытый конструктор
-        private Student(string aSurname, string aName, string aFathername)
-        {
-            surname = aSurname;
-            name = aName;
-            fathername = aFathername;
-            numberOfStudents++;
-            id = this.GetHashCode();
-        }
+        // private Student() {  }
 
 
         // cтатический конструктор 
