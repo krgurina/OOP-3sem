@@ -8,20 +8,22 @@ namespace oop3
     public class List
     {
         //вложенный объект 
-        public Owner owner;
-
+        public Production production;
         //вложенный класс
-        public class Date
+        public class Developer
         {
-            public int day;
-            public int month;
-            public int year;
-
-            public Date(int day, int month, int year)
+            public readonly int id = 0;
+            public readonly string DevName;
+            public readonly string department;
+            public Developer(string DevName, string department)
             {
-                this.day = day;
-                this.month = month;
-                this.year = year;
+                id++;
+                this.DevName = DevName;
+                this.department = department;
+            }
+            public void ShowInfoDev()
+            {
+                Console.WriteLine($"Разработчик: {DevName} \nОтдел: {department}");
             }
         }
 

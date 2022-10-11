@@ -51,7 +51,8 @@ namespace oop3
         }
 
         // методы расширения
-        public static string MaxLength(this string[] str)  //поиск самого длинного слова
+        //поиск самого длинного слова
+        public static string MaxLength(this string[] str)  
         {
 
             int max = str[0].Length;

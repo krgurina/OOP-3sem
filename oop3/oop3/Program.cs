@@ -34,8 +34,11 @@ namespace oop3
             Console.WriteLine("List1 = List3 : " + (myList1 == myList3));
             Console.WriteLine();
 
-            List.Date date = new List.Date(28, 9, 2003);
-            myList1.owner = new Owner(183748,"Kris","BSTU");
+            List.Developer dev = new List.Developer("Кристина", "ФИТ");
+            myList1.production = new Production(185657, "БГТУ");
+            dev.ShowInfoDev();
+            myList1.production.PrintProduction(myList1.production);
+            Console.WriteLine();
 
             StatisticOperation.GetSum(myList2);
             StatisticOperation.MinMaxDifference(myList2);
@@ -43,7 +46,8 @@ namespace oop3
 
             string[] srtArr = { "aaa", "bbbbb", "ccccccc" };            
             Console.WriteLine($"Самое длинное слово: { srtArr.MaxLength()}");
-
+            
+            Console.WriteLine();
             myList2.PrintList();
             Console.WriteLine($"Удаление последнего элемента: ");
             myList2.Del();
