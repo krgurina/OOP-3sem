@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop4
 {
-    class Author : Person
+    class Author : Person, IPrinter
     {
         private string pseudonym;
         public string Pseudonym
@@ -18,6 +18,11 @@ namespace oop4
             Pseudonym = _Pseudonym;
         }
 
+        public void PrintInfo()
+        {
+            Console.WriteLine(ToString());
+
+        }
         public override string ToString()
         {
             return base.ToString() + "\nПсевдоним: " + pseudonym;

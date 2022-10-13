@@ -31,5 +31,10 @@ namespace oop4
         {
             return base.ToString() + "\nНазвание: " + title + "\nГод печати: " + publishYear;
         }
+
+        public override void Virtual()
+        {
+            Console.WriteLine("Работает 2 виртуалный метод");
+        }
     }
 }
