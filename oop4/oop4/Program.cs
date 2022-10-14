@@ -26,9 +26,9 @@ namespace oop4
             //Console.WriteLine(person);
             //Console.WriteLine();
 
-            Author author = new Author("wwwww", "Кристина", "Гурина", "*псевдоним*");
-            //Console.WriteLine(author);
-            //Console.WriteLine();
+            Author author = new Author("wwwww", "Имя", "Фамилия", "*псевдоним*");
+            Author author1 = new Author("wwwww", "qqqq", "www", "*eeeee*");
+
 
             // для интерфейса
             author.PrintInfo();
@@ -43,6 +43,32 @@ namespace oop4
             IPrinter printer = office;
             printer.DoClone();
 
+            ((IPrinter)office).DoClone();
+
+            Person person1 = author;
+            Person person2 = author1 as Person;
+
+            Console.WriteLine();
+            Console.WriteLine(person1);
+            Console.WriteLine(person2);
+            Console.WriteLine();
+
+            Console.WriteLine(office is Person);
+            Console.WriteLine(author is Person);
+            Console.WriteLine(textBook is Book);
+
+            // переменная ссылка на интерфейс
+            IPrinter printer1 = office as IPrinter;
+
+
+            Object[] objarr = { office, ediction, book, textBook, author };
+            
+            foreach (var item in objarr)
+            {
+
+                Printer.IAmPrinting(item);
+
+            }
         }
     }
 }
