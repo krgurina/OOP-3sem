@@ -4,6 +4,7 @@ namespace oop4
 {
     class Program
     {
+        // 5 лаба
         // перечисление
         enum Books
         {
@@ -46,21 +47,12 @@ namespace oop4
             Console.WriteLine();
 
             PrintedEdiction ediction = new PrintedEdiction("wwwww", "Дюна", 1965);
-            Console.WriteLine(ediction);
-            Console.WriteLine();
-
             Book book = new Book("wwwww", "Дюна", 1965, "фантастика");
-            //Console.WriteLine(book);
-            //Console.WriteLine();
-
             TextBook textBook = new TextBook("wwwww", "Физика", 2020, "учебная", 11);
-            //Console.WriteLine(textBook);
-            //Console.WriteLine();
+
 
             Person person = new Person("wwwww", "Кристина", "Гурина");
-            //Console.WriteLine(person);
-            //Console.WriteLine();
-
+           
             Author author = new Author("wwwww", "Имя", "Фамилия", "*псевдоним*");
             Author author1 = new Author("wwwww", "qqqq", "www", "*eeeee*");
 
@@ -109,9 +101,55 @@ namespace oop4
             /////////////////////////////////////////////////////////////////////////////////////
             // 5 лаба
 
-            // перечисление 
-       
-            
+            var firstItem = book;
+            var secondItem = new Magazine("Издательство", "Весёлые овощи", 2020, "Огородники");
+            var thirdItem = textBook;
+
+            Library library = new Library(firstItem, secondItem, thirdItem);
+
+            Console.WriteLine("\nПроверка методов класса-контейнера:");
+            library.Add(firstItem);
+            library.Add(secondItem);
+            library.Add(thirdItem);
+
+            Console.WriteLine("Вывод всех первоначальных объектов:");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            library.Printing();
+
+            Console.ForegroundColor = ConsoleColor.White;
+            library.Delete(firstItem);
+            Console.WriteLine("\nВывод объектов после удаления:");
+            library.Printing();
+
+            library.Add(firstItem);
+            Console.WriteLine($"\nКоличество книг в библиотеке: {library.amount}");
+
+            library.GetTextBookAmount(library);
+            //GetTextBookAmount(library);
+
+            //поиск по году
+            library.FindBook(library);
+
+            //Console.WriteLine(thirdItem.GetType());
+            //var tt = textBook.GetType();
+
+            //static void GetTextBookAmount(Library library)
+            //{
+            //    TextBook textBookExample = new TextBook("wwwww", "Физика", 2011, "учебная", 11);
+            //    int textBookAmount = 0;
+            //    for (int i = 0; i < library.amount; i++)
+            //    {
+
+            //        if (library[i].GetType() == textBookExample.GetType())
+            //        {
+            //            textBookAmount++;
+            //        }
+            //    }
+            //    Console.WriteLine($"\nКоличество учебников: {textBookAmount}");
+
+            //}
+
+
         }
     }
 }
