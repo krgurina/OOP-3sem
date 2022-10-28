@@ -46,9 +46,9 @@ namespace oop4
             Console.WriteLine(office);
             Console.WriteLine();
 
-            PrintedEdiction ediction = new PrintedEdiction("wwwww", "Дюна", 1965);
-            Book book = new Book("wwwww", "Дюна", 1965, "фантастика");
-            TextBook textBook = new TextBook("wwwww", "Физика", 2020, "учебная", 11);
+            PrintedEdiction ediction = new PrintedEdiction("wwwww", "Дюна", 1965, 20);
+            Book book = new Book("wwwww", "Дюна", 1965, 22, "фантастика");
+            TextBook textBook = new TextBook("wwwww", "Физика", 2020, 17, "учебная", 11);
 
 
             Person person = new Person("wwwww", "Кристина", "Гурина");
@@ -100,9 +100,9 @@ namespace oop4
 
             /////////////////////////////////////////////////////////////////////////////////////
             // 5 лаба
-
+            // класс контейнер
             var firstItem = book;
-            var secondItem = new Magazine("Издательство", "Весёлые овощи", 2020, "Огородники");
+            var secondItem = new Magazine("Издательство", "Весёлые овощи", 2020, 5, "Огородники");
             var thirdItem = textBook;
 
             Library library = new Library(firstItem, secondItem, thirdItem);
@@ -124,30 +124,14 @@ namespace oop4
             library.Add(firstItem);
             Console.WriteLine($"\nКоличество книг в библиотеке: {library.amount}");
 
-            library.GetTextBookAmount(library);
-            //GetTextBookAmount(library);
+           
+            // класс контроллер
+            Controller controller = new Controller();
+            controller.GetTextBookAmount(library);
+            controller.FindBook(library);
+            controller.GetPrise(library);
 
-            //поиск по году
-            library.FindBook(library);
 
-            //Console.WriteLine(thirdItem.GetType());
-            //var tt = textBook.GetType();
-
-            //static void GetTextBookAmount(Library library)
-            //{
-            //    TextBook textBookExample = new TextBook("wwwww", "Физика", 2011, "учебная", 11);
-            //    int textBookAmount = 0;
-            //    for (int i = 0; i < library.amount; i++)
-            //    {
-
-            //        if (library[i].GetType() == textBookExample.GetType())
-            //        {
-            //            textBookAmount++;
-            //        }
-            //    }
-            //    Console.WriteLine($"\nКоличество учебников: {textBookAmount}");
-
-            //}
 
 
         }

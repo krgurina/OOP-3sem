@@ -20,11 +20,18 @@ namespace oop4
             set { publishYear = value; }
         }
 
-        public PrintedEdiction(string _PublishName, string _title, int _PublishYear)
+        private int cost;
+        public int Cost
+        {
+            get { return cost; }
+            set { cost = value; }
+        }
+        public PrintedEdiction(string _PublishName, string _title, int _PublishYear, int _Cost)
             : base(_PublishName)
         {
             title = _title;
             PublishYear = _PublishYear;
+            cost = _Cost;
         }
 
         public override string ToString()

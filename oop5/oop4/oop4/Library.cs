@@ -6,6 +6,7 @@ namespace oop4
 {
     class Library
     {
+        public int price = 0;
         public int amount = 0;
         public List<PrintedEdiction> list = new List<PrintedEdiction>();
         public Library(Book firstItem, Magazine secondItem, TextBook thirdItem)
@@ -58,40 +59,6 @@ namespace oop4
                 else
                     list[index] = value;
             }
-        }
-
-
-
-        public void FindBook(Library library)
-        {
-            Console.WriteLine("Введите год: ");
-            int findYear = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 0; i < library.amount; i++)
-            {
-                if (findYear < library[i].PublishYear)
-                {
-                    Console.WriteLine(library[i].Title);
-                }
-
-            }
-
-        }
-
-        public void GetTextBookAmount(Library library)
-        {
-            TextBook textBookExample = new TextBook("wwwww", "Физика", 2011, "учебная", 11);
-            int textBookAmount = 0;
-            for (int i = 0; i < library.amount; i++)
-            {
-
-                if (library[i].GetType() == textBookExample.GetType())
-                {
-                    textBookAmount++;
-                }
-            }
-            Console.WriteLine($"\nКоличество учебников: {textBookAmount}\n");
-
         }
 
     }
