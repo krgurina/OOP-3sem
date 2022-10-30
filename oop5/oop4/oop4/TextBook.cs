@@ -30,6 +30,7 @@ namespace oop4
             amount++;
         }
 
+
         public override string ToString()
         {
             return base.ToString() + "\nКласс: " + grade;

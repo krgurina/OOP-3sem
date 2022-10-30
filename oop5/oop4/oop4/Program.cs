@@ -142,6 +142,92 @@ namespace oop4
 
             Library library2 = new Library(book1, magazine1, textBook1);
 
+            Console.WriteLine("\n\n\n ________________Для лабораторной работы №6_________________\n");
+
+            // Объект класса принимает значение NULL
+            try
+            {
+                object obj = "String";
+                Book bk = obj as Book;
+                if (bk == null)
+                {
+                    throw new NullObject();     
+                }
+            }
+            catch (NullObject e)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                e.PrintInfo();
+            }
+
+
+            try
+            {
+                Book bk2 = new Book("wwwww", "Преступление и наказание", 2023, 22, "русская классика");
+
+                if (bk2.PublishYear > 2022)
+                {
+                    throw new WrongDate("Неверный год! Книга не напечатана");
+                }
+            }
+            catch (WrongDate e)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                e.PrintInfo();
+            }
+
+
+            // неверная стоимость
+            try
+            {
+                Book bk3 = new Book("wwwww", "Преступление и наказание", 2023, -22, "русская классика");
+                if (bk3.Cost<0)
+                {
+                    throw new WrongCost("Неверная стоимость!");
+                }
+            }
+
+            catch (WrongCost e)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                e.PrintInfo();
+            }
+
+
+            // Деление на 0
+            try
+            {
+                int x = 5, y = 0;
+                int c = x / y;
+            }
+            catch (Exception e)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine(e.Message + "\n");
+            }
+
+
+            // Выход за границы массива
+            try
+            {
+                int[] arr = new int[8];
+                arr[10] = 10;
+            }
+            catch (Exception e)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(e.Message + "\n");
+            }
+
+
+            finally     // Необязательный элемент. Finally-Блок всегда выполняется,
+                        // когда выполнение покидает любую часть Try...Catch инструкции
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\tFINALLY > Обязательное выполнение данного кода \n");
+            }
+
+
         }
     }
 }
