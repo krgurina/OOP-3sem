@@ -131,8 +131,16 @@ namespace oop4
             controller.FindBook(library);
             controller.GetPrise(library);
 
+            // читение из файла
+            string book1;
+            string magazine1;
+            string textBook1;
 
+            book1 = controller.ReadBook();
+            magazine1 = controller.ReadMagazine();
+            textBook1 = controller.ReadTextBook();
 
+            Library library2 = new Library(book1, magazine1, textBook1);
 
         }
     }

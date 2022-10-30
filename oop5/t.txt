@@ -1,0 +1,3 @@
+book1
+magazine1
+textbook1

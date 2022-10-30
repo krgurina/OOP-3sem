@@ -13,6 +13,10 @@ namespace oop4
         {
 
         }
+        public Library(string firstItem, string secondItem, string thirdItem)
+        {
+
+        }
 
         public void Add(PrintedEdiction obj)   
         {

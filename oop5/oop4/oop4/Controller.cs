@@ -3,25 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace oop4
 {
     class Controller
     {
-		public Controller()                                             // конструктор без параметров (по умолчанию)
-		{
-		}
+        public Controller()                                             // конструктор без параметров (по умолчанию)
+        {
+        }
 
-
-		//public void NumberOfEachType()                                  // Подсчёт количества каждого вида техники
-		//{
-		//	Console.WriteLine("\n\tКоличество каждого вида техники: ");
-		//	Console.ForegroundColor = ConsoleColor.DarkCyan;
-		//	Console.WriteLine(" -> Количество книг: " + Book.amount);
-		//	Console.WriteLine(" -> Количество учебников:" + TextBook.amount);
-		//	Console.WriteLine(" -> Количество журналов: " + Magazine.amount);
-		//	Console.ForegroundColor = ConsoleColor.White;
-		//}
 
         public void FindBook(Library library)
         {
@@ -65,6 +56,40 @@ namespace oop4
             }
             Console.WriteLine($"Стоимость всех книг: {sum}");
         }
+
+
+
+        // чтение из файла
+        String line;
+        public string ReadBook()
+        {
+            StreamReader sr = new StreamReader("F:/лабы/ООП/labs/oop5/t.txt");
+            line = sr.ReadLine();
+            sr.Close();
+            return line;
+        }
+        public string ReadMagazine()
+        {
+            StreamReader sr = new StreamReader("F:/лабы/ООП/labs/oop5/t.txt");
+            line = sr.ReadLine();
+            line = sr.ReadLine();
+            sr.Close();
+            return line;
+        }
+
+        public string ReadTextBook()
+        {
+            StreamReader sr = new StreamReader("F:/лабы/ООП/labs/oop5/t.txt");
+            line = sr.ReadLine();
+            line = sr.ReadLine();
+            line = sr.ReadLine();
+            sr.Close();
+            return line;
+        }
+
+        
+
+
 
     }
 }
