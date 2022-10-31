@@ -177,6 +177,8 @@ namespace oop4
             {
                 Console.ForegroundColor = ConsoleColor.White;
                 e.PrintInfo();
+                Logger.WriteLogFileConsole(e, true);
+                Logger.WriteLogFileConsole(e);
             }
 
 
