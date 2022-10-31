@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace oop4
 {
@@ -160,6 +161,8 @@ namespace oop4
                 e.PrintInfo();
             }
 
+            //int a = -10;
+            //Debug.Assert(a > 0);
 
             try
             {
@@ -177,13 +180,25 @@ namespace oop4
             }
 
 
+            // множественная обработка исключения
             // неверная стоимость
             try
             {
-                Book bk3 = new Book("wwwww", "Преступление и наказание", 2023, -22, "русская классика");
-                if (bk3.Cost<0)
+                try
                 {
-                    throw new WrongCost("Неверная стоимость!");
+                    Book bk3 = new Book("wwwww", "Преступление и наказание", 2023, -22, "русская классика");
+                    if (bk3.Cost < 0)
+                    {
+                        throw new WrongCost("Неверная стоимость!");
+                    }
+                }
+
+                catch (WrongCost e)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    e.PrintInfo();
+                    throw;
+
                 }
             }
 
@@ -191,6 +206,7 @@ namespace oop4
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 e.PrintInfo();
+                
             }
 
 
@@ -200,11 +216,13 @@ namespace oop4
                 int x = 5, y = 0;
                 int c = x / y;
             }
+            //общий обработчик исключений
             catch (Exception e)
             {
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine(e.Message + "\n");
             }
+
 
 
             // Выход за границы массива
@@ -213,19 +231,46 @@ namespace oop4
                 int[] arr = new int[8];
                 arr[10] = 10;
             }
+
+            //
             catch (Exception e)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(e.Message + "\n");
             }
 
+            //универсальный обработчик
+            catch 
+            {
+                Console.WriteLine("\nработает универсальный обработчик\n");
+            }
 
-            finally     // Необязательный элемент. Finally-Блок всегда выполняется,
-                        // когда выполнение покидает любую часть Try...Catch инструкции
+            finally     
+                        
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\tFINALLY > Обязательное выполнение данного кода \n");
             }
+
+
+            // Тестирование макроса Assert.
+
+            /* Проверяет условие.
+             Если условие имеет значение false,
+             выдается сообщение и отображается окно сообщения со стеком вызовов */
+            //Программа продолжается без каких-либо перерывов, если условие истинно.
+
+            //int a = -10;
+            //Debug.Assert(a > 0);
+
+            //Book bk4 = new Book("wwwww", "Преступление и наказание", 2023, 22, "русская классика");
+            //Debug.Assert(bk4.PublishYear > 2022, "Год печати не может быть больше 2022");
+
+
+
+
+
+
 
 
         }
