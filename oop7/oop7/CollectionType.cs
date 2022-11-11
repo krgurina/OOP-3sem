@@ -24,6 +24,10 @@ namespace oop7
             list.Add(element);
             _count++;
         }
+        internal void Add()
+        {
+            throw new NotImplementedException("ИСКЛЮЧЕНИЕ: Метод или операция не реализованы!\n");
+        }
 
         public void Show()
         {
@@ -36,8 +40,14 @@ namespace oop7
 
         public void Delete(T deleteEl)
         {
+            if (_count == 0)
+                throw new InvalidOperationException();
             this.list.Remove(deleteEl);
             _count--;
+        }
+        internal void Delete()
+        {
+            throw new NotImplementedException("ИСКЛЮЧЕНИЕ: Метод или операция не реализованы!\n");
         }
 
         // перегрузки
