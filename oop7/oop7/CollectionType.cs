@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 namespace oop7
 {
@@ -305,75 +307,90 @@ namespace oop7
 
         }
 
+        public override int GetHashCode()
+        {
+            return _count.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj.GetType() != this.GetType()) return false;
+            CollectionType<T> collItem = obj as CollectionType<T>;
+            //List<T> listItem = obj as List<T>;
+            // List<T> listItem = (List<T>)obj;
+            //return this.list == collItem.list && this.Count == collItem.Count;
+
+            if (this.list.Count == collItem.list.Count)
+                return true;
+            else return false;
+
+
+            //for (int i = 0; i < this.list.Count; i++)
+            //{
+            //    for (int j = 0; i < collItem.list.Count; j++)
+            //    {
+            //        if (this.list[i] == collItem.list[j])
+            //            continue;
+            //        else return false;
+            //    }
+            //}
+            //return true;
+
+        }
+
+        //public void ToFile(CollectionType<T> type)
+        //{
+        //    int index = type.Count;
+        //    string[] text = new string[index];
+        //    for (int i = 0; i < index; i++)
+        //    {
+        //        text[i] = Convert.ToString(type.list[i]);
+        //    }
+        //    File.WriteAllLines(@"F:\лабы\ООП\labs\oop7\q.txt", text);
+        //}
+        //public void FromFile()
+        //{
+        //    Console.WriteLine(File.ReadAllText(@"F:\лабы\ООП\labs\oop7\q.txt"));
+        //}
+        public static void WriteToFile(CollectionType<T> arr)
+        {
+            using (StreamWriter file = new StreamWriter(@"F:\лабы\ООП\labs\oop7\q.txt", false))
+            {
+                
+                //file.Write("{");
+
+                for(int i=0; i<arr.list.Count;i++)
+                {
+                    file.Write($"{arr.list[i]} ");
+                }
+
+                //foreach (var i in arr)
+                //    file.Write($"{i} ");
+                //file.Write("}");
+                file.Close();
+            }
+        }
+
+
+        public static void LoadFromFile()             // Чтение из файла
+        {
+            using (FileStream fstream = File.OpenRead(@"F:\лабы\ООП\labs\oop7\q.txt"))
+            {
+                // преобразуем строку в байты
+                byte[] array = new byte[fstream.Length];
+                // считываем данные
+                fstream.Read(array, 0, array.Length);
+                // декодируем байты в строку
+                string textFromFile = System.Text.Encoding.Default.GetString(array);
+                Console.WriteLine($"Текст из файла: {textFromFile}");
+            }
+        }
+
+
     }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //public override int GetHashCode()
-    //    {
-    //        return _count.GetHashCode();
-    //    }
-
-
-
-        //public override bool Equals(object obj)
-        //{
-
-        //    if (obj == null) return false;
-        //    if (obj.GetType() != this.GetType()) return false;
-        //    CollectionType<T> collItem = obj as CollectionType<T>;
-        //    //List<T> listItem = obj as List<T>;
-        //    // List<T> listItem = (List<T>)obj;
-        //    //return this.list == collItem.list && this.Count == collItem.Count;
-
-        //    if (this.list.Count == collItem.list.Count)
-        //        return true;
-        //    else return false;
-
-
-        //    //for (int i = 0; i < this.list.Count; i++)
-        //    //{
-        //    //    for (int j = 0; i < collItem.list.Count; j++)
-        //    //    {
-        //    //        if (this.list[i] == collItem.list[j])
-        //    //            continue;
-        //    //        else return false;
-        //    //    }
-        //    //}
-        //    //return true;
-
-        //}
-
-
-
-    
 }

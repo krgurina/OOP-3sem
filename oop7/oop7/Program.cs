@@ -109,9 +109,12 @@ namespace oop7
                 //пофиксить
                 Console.WriteLine(strCollection.Equals(strCollection2));
 
+                ////чтение из файла
+                CollectionType<int>.WriteToFile(intCollection);
+                CollectionType<int>.LoadFromFile();
 
-
-
+                CollectionType<string>.WriteToFile(strCollection);
+                CollectionType<string>.LoadFromFile();
 
 
 
