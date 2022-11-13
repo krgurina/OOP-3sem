@@ -25,7 +25,7 @@ namespace oop8
         public void ToAtt(Game obj)   
         {
             Console.WriteLine();
-            obj.hp -= 50;
+            //obj.hp -= 50;
             Console.WriteLine(this.name + " атаковал "+ obj.name);
             Attack?.Invoke(obj);//вызов события, если не null
 
