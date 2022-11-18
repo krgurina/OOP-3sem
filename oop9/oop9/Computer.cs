@@ -6,15 +6,21 @@ namespace oop9
 {
     class Computer//:ISet<T>
     {
-        public int Id { get; set; }
+        public string Model { get; set; }
+        public string Color { get; set; }
+
         public int Price { get; set; }
 
-        public Computer(int id,int price)
+        public Computer(string Model,string Color,int Price)
         {
-            Id = id;
-            Price = price;
+            this.Model = Model;
+            this.Color = Color;
+            this.Price = Price;
         }
-
+        public override string ToString()
+        {
+            return $"{Model} {Color} {Price}";
+        }
 
     }
 }

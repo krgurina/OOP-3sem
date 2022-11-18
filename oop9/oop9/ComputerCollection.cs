@@ -29,17 +29,23 @@ namespace oop9
         {
             return this.hset.Add(item);
         }
+       
 
         public void Show()
         {
             foreach (T element in this.hset)
             {
-                Console.Write(element + "\t");
+                Console.Write(element + "\n");
             }
             Console.WriteLine("\n");
         }
 
-       
+        //public T Find(Predicate<T> match)
+        //{
+        //    return this.Find(match)
+        //}
+
+
         public void ExceptWith(IEnumerable<T> other)
         {
             this.hset.ExceptWith(other);
