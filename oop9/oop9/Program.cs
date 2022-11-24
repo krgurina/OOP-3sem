@@ -27,9 +27,12 @@ namespace oop9
             computers.Remove(computer4);
             computers.Show();
 
+            Console.WriteLine("Результат поиска пк1 в коллекции");
+            Console.WriteLine(computers.Contains(computer1));
+
             Console.WriteLine("===================== Универсальная коллекция =====================");
 
-            //Computer found = computers.Find(item => item.Price == 1);
+            //Computer found2 = computers.Find(item => item.Price == 1);
             MyCollection<string> strColl = new MyCollection<string>();
             strColl.Add("aaa");
             strColl.Add("bbb");
@@ -60,6 +63,7 @@ namespace oop9
             {
                 Console.WriteLine(i);
             }
+
 
             Computer found = compList.Find(item => item.Price == 2500);
             Console.WriteLine(found);
