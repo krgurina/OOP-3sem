@@ -113,9 +113,6 @@ namespace oop10
             var PriseList = list.OrderBy(t => t.Price).Select(t => t);
 
 
-
-
-
             Console.WriteLine("=====================AuthorBooks=====================");
             foreach (var item in AuthorBooks)
             {
@@ -143,6 +140,50 @@ namespace oop10
                 Console.WriteLine(item);
             }
             Console.WriteLine();
+
+            Console.WriteLine("===================== Мой запрос =====================");
+
+            // мой запрос
+            var Selected = list
+
+                                .OrderBy(n => n.PublishYear)
+                                .Where(n => n.PageNumber >= 100)
+                                .Take(5)
+                                .GroupBy(n => n.PageNumber)
+                                .Last();
+
+            Console.WriteLine(Selected.Key);
+            foreach (var item in Selected)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("===================== Join =====================");
+
+            List<int> Col1 = new List<int>()
+            {
+                1,2,3,4,3,6
+            };
+            List<int> Col2 = new List<int>()
+            {
+                5,6,3,4,9,6
+            };
+            var Col3 = Col1.Join(Col2, p => p, t => t, (t, p) => t + p);
+            foreach (var item in Col3)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
