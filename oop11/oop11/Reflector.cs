@@ -101,5 +101,43 @@ namespace oop11
             return result;
         }
 
+        // Всё то же самое, что и выше, но записываем в файл, а не в консось
+        public static void ToFile(object obj, Type param)
+        {
+            Type type = obj.GetType();
+            string filePath = @"F:\лабы\ООП\labs\oop11\oop11\out.txt";
+            using (StreamWriter sw = new StreamWriter(filePath, false, Encoding.Default))
+            {
+                /// имя сборки
+                sw.WriteLine("Класс " + type.FullName + " определен в сборке " + AssName(obj).FullName);
+                /// контрукторы
+                sw.WriteLine("\nКонструкторы: " + PublicConstruct(obj));
+                /// методы
+                sw.WriteLine("\nМетоды: ");
+                foreach (MethodInfo method in Methods(obj))
+                    sw.WriteLine("--> " + method.ReturnType.Name + "\t\t" + method.Name + "()");
+                /// свойства
+                sw.WriteLine("\nСвойства:");
+                foreach (PropertyInfo property in Fields(obj))
+                    sw.WriteLine(property.PropertyType + "\t" + property.Name);
+                /// интерфейсы
+                sw.WriteLine("\nИнтерфейсы:");
+                foreach (Type inter in Interfaces(obj))
+                    sw.WriteLine(inter.Name);
+                /// определенные методы
+                sw.WriteLine($"\nМетоды с параметром {param}:");
+                foreach (var res in GetSomeMethods(obj, param))
+                    sw.WriteLine(res.Name);
+                /// задание 2: записать в файл инфу о параметрах для метода InvokeClass()
+                sw.WriteLine("\n\nTask 2:");
+                sw.WriteLine("parameters"); /// эта строчка дает функции понять, откуда начинаются параметры
+                sw.WriteLine("Supra 680");  /// отсюда можно начинать писать через пробел все параметры
+            }
+        }
+
+
+
+
+
     }
 }
