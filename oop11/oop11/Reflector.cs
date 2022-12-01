@@ -108,35 +108,72 @@ namespace oop11
             string filePath = @"F:\лабы\ООП\labs\oop11\oop11\out.txt";
             using (StreamWriter sw = new StreamWriter(filePath, false, Encoding.Default))
             {
-                /// имя сборки
+                // имя сборки
                 sw.WriteLine("Класс " + type.FullName + " определен в сборке " + AssName(obj).FullName);
-                /// контрукторы
+                // контрукторы
                 sw.WriteLine("\nКонструкторы: " + PublicConstruct(obj));
-                /// методы
+                // методы
                 sw.WriteLine("\nМетоды: ");
                 foreach (MethodInfo method in Methods(obj))
                     sw.WriteLine("--> " + method.ReturnType.Name + "\t\t" + method.Name + "()");
-                /// свойства
+                // свойства
                 sw.WriteLine("\nСвойства:");
                 foreach (PropertyInfo property in Fields(obj))
                     sw.WriteLine(property.PropertyType + "\t" + property.Name);
-                /// интерфейсы
+                // интерфейсы
                 sw.WriteLine("\nИнтерфейсы:");
                 foreach (Type inter in Interfaces(obj))
                     sw.WriteLine(inter.Name);
-                /// определенные методы
+                // определенные методы
                 sw.WriteLine($"\nМетоды с параметром {param}:");
                 foreach (var res in GetSomeMethods(obj, param))
                     sw.WriteLine(res.Name);
-                /// задание 2: записать в файл инфу о параметрах для метода InvokeClass()
+                // задание 2: записать в файл инфу о параметрах для метода InvokeClass()
                 sw.WriteLine("\n\nTask 2:");
-                sw.WriteLine("parameters"); /// эта строчка дает функции понять, откуда начинаются параметры
-                sw.WriteLine("Supra 680");  /// отсюда можно начинать писать через пробел все параметры
+                sw.WriteLine("parameters"); // эта строчка дает функции понять, откуда начинаются параметры
+                sw.WriteLine("Supra 680");  // отсюда можно начинать писать через пробел все параметры
             }
         }
 
+        // Метод Invoke
+        public static void InvokeClass(object obj, string methodName)
+        {
+            Type type = obj.GetType();
+            string filePath = @"F:\лабы\ООП\labs\oop11\oop11\out.txt";
+            string fileInf = "";                            // сюда запишем весь файл out.txt
+            string strParams = "parameters";
 
+            using (StreamReader sr = new StreamReader(filePath, Encoding.Default))
+                fileInf = sr.ReadToEnd();
 
+            int index = fileInf.IndexOf(strParams);         // индекс последнего вхождения строки "parameters"
+
+            List<string> paramsList = new List<string>();   // список хранящий параметры
+            string currentParam = "";                       // сюда записываем сами параметры
+            for (int i = index + strParams.Length + 2; i < fileInf.Length; i++)
+            {
+                if (fileInf[i] == ' ' || fileInf[i] == '\n')
+                {
+                    paramsList.Add(currentParam);           // записываем параметры в список
+                    currentParam = "";
+                }
+                else
+                    currentParam += fileInf[i];
+            }
+
+            var method = type.GetMethod(methodName);          // получаем метод из параметра InvokeClass
+            string stringParam1 = "";
+            int intParam2;
+            stringParam1 = paramsList.First();                // сюда записываем первый строковый параметр
+            int.TryParse(paramsList.Last(), out intParam2);   // а сюда второй интовый
+
+            object objCls = Activator.CreateInstance(type);   // создаем экземпляр класса Cls 
+            if (paramsList.Count() != 0)
+                method.Invoke(objCls, new object[] { stringParam1, intParam2 });
+            else
+                method.Invoke(objCls, new object[] { });      // проверям кол-во параметров и передаем в метод
+                                                              
+        }
 
 
     }
