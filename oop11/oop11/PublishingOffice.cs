@@ -18,6 +18,10 @@ namespace oop11
             PublishName = _PublishName;
         }
 
+        public PublishingOffice()
+        {
+            PublishName = "NoName";
+        }
 
         public override string ToString()
         {
@@ -52,7 +56,10 @@ namespace oop11
 
         }
 
-
+        public int ChangeYear(int year)
+        {
+            return year + 10;
+        }
 
 
     }

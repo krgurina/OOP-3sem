@@ -1,0 +1,37 @@
+Класс oop11.PrintedEdiction определен в сборке oop11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Конструкторы: Void .ctor(System.String, System.String, Int32)
+
+Методы: 
+--> String		get_Title()
+--> Void		set_Title()
+--> Int32		get_PublishYear()
+--> Void		set_PublishYear()
+--> Void		Toconsole()
+--> String		ToString()
+--> Void		Virtual()
+--> String		get_PublishName()
+--> Void		set_PublishName()
+--> Void		Work()
+--> Void		DoClone()
+--> Int32		ChangeYear()
+--> Type		GetType()
+--> Boolean		Equals()
+--> Int32		GetHashCode()
+
+Свойства:
+System.String	Title
+System.Int32	PublishYear
+System.String	PublishName
+
+Интерфейсы:
+IPrinter
+
+Методы с параметром System.Int32:
+set_PublishYear
+ChangeYear
+
+
+Task 2:
+parameters
+Питер

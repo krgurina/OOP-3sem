@@ -13,7 +13,7 @@ namespace oop11
         // Имя сборки, в которой определен класс
         public static Assembly AssName(object obj)
         {
-            Type type = obj.GetType();     /// это прописываем всегда, чтобы работать с рефлексией и System.Type
+            Type type = obj.GetType();     // это прописываем всегда, чтобы работать с рефлексией и System.Type
             Assembly ass = Assembly.GetAssembly(type);
             Console.WriteLine("Класс " + type.FullName + " определен в сборке " + ass.FullName);
             return ass;
@@ -131,7 +131,7 @@ namespace oop11
                 // задание 2: записать в файл инфу о параметрах для метода InvokeClass()
                 sw.WriteLine("\n\nTask 2:");
                 sw.WriteLine("parameters"); // эта строчка дает функции понять, откуда начинаются параметры
-                sw.WriteLine("Supra 680");  // отсюда можно начинать писать через пробел все параметры
+                sw.WriteLine("Питер");  // отсюда можно начинать писать через пробел все параметры
             }
         }
 
@@ -174,6 +174,36 @@ namespace oop11
                 method.Invoke(objCls, new object[] { });      // проверям кол-во параметров и передаем в метод
                                                               
         }
+
+
+        static public void Invoke(string classname, string methode)         /* вызывает метод класса; для его параметров необходимо:
+                                                                 * 1) прочитать из текстового файла (имя класса и имя метода передаются в качестве аргументов) */
+        {
+            Type type = Type.GetType(classname);
+            List<string> list = File.ReadAllLines("F:\\лабы\\ООП\\labs\\oop11\\oop11\\Parm.txt").ToList();
+            List<string>[] list2 = new List<string>[] { list };
+            try
+            {
+                object obj = Activator.CreateInstance(type);
+                MethodInfo methodInfo = type.GetMethod(methode);
+                Console.WriteLine(methodInfo.Invoke(obj, list2));
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void Create(string classname, string parm)        /* создает объект переданного типа (на основе имеющихся публичных конструкторов)
+                                                                         * и возвращает его пользователю. */
+        {
+            Type type = Type.GetType(classname);
+            ConstructorInfo[] constructorInfo = type.GetConstructors();
+            object obj = Activator.CreateInstance(type, args: parm);
+            Console.WriteLine(obj.ToString());
+        }
+
 
 
     }

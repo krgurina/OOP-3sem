@@ -27,6 +27,19 @@ namespace oop11
             PublishYear = _PublishYear;
         }
 
+        public PrintedEdiction()
+        {
+            PublishName = "NoName";
+            title = "Nititle";
+            PublishYear = 0;
+        }
+
+        public void Toconsole(List<string> vs)
+        {
+            foreach (string str in vs)
+                Console.WriteLine(str);
+        }
+
         public override string ToString()
         {
             return base.ToString() + "\nНазвание: " + title + "\nГод печати: " + publishYear;
