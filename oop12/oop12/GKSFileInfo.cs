@@ -10,7 +10,7 @@ namespace oop12
         public static void GetFileInfo()
         {
             string path = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
-            string classLogInfo = "\n=========================================   GKSFileInfo   ================================================\n";
+            string classLogInfo = "\n=========================================   GKSFileInfo   =========================================\n";
             string fileInfoLog = "";
 
             FileInfo fileInfo = new FileInfo(path);

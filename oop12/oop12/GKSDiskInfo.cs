@@ -9,7 +9,7 @@ namespace oop12
     {
         public static void GetDiskInfo()
         {
-            string classLogInfo = "\n=========================================   GKSDiskInfo   ================================================\n";   /// инфа для логгера
+            string classLogInfo = "\n=========================================   GKSDiskInfo   =========================================\n";   /// инфа для логгера
             string DiskInfo = "";                           /// сюда будет записываться вся информация из метода GetDrives()
 
             DriveInfo[] drives = DriveInfo.GetDrives();     /// массив объектов типа DriveInfo с инфой о дисках
