@@ -1,0 +1,16 @@
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\oop13.exe
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\oop13.deps.json
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\oop13.runtimeconfig.json
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\oop13.runtimeconfig.dev.json
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\oop13.dll
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\oop13.pdb
+F:\лабы\ООП\labs\oop13\oop13\bin\Debug\netcoreapp3.1\SoapFormatter.dll
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.csproj.AssemblyReference.cache
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.AssemblyInfoInputs.cache
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.AssemblyInfo.cs
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.csproj.CopyComplete
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.dll
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.pdb
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.genruntimeconfig.cache

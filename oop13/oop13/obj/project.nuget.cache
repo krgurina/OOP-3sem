@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "L1Wo6SXhtEpTofiVuwVoiJlc7YYK2bOhCuJkRhHXWnvqXS3jlNb3LOI5cwmuIpd9iXmncDJlVtUdMgPSVYQwKw==",
+  "success": true,
+  "projectFilePath": "F:\\лабы\\ООП\\labs\\oop13\\oop13\\oop13.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\XE\\.nuget\\packages\\soapformatter\\1.1.9\\soapformatter.1.1.9.nupkg.sha512"
+  ],
+  "logs": []
+}
