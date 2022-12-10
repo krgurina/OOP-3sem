@@ -92,7 +92,7 @@ namespace oop12
         //Создать еще один директорий XXXFiles. Скопировать в него все файлы с заданным расширением из заданного пользователем директория. Переместить XXXFiles в XXXInspect.
         public static void CopyFiles(string path, string path2, string path3)
         {
-            string classLogInfo = "\n-----------------------   GKSFileManager - 5   -----------------------\n";
+            string classLogInfo = "\nn=========================================   GKSFileManager - 5   n=========================================\n";
             string CopyFilesLog = "";
 
             try
@@ -134,7 +134,7 @@ namespace oop12
         //Сделайте архив из файлов директория XXXFiles. Разархивируйте его в другой директорий.
         public static void ZipFiles(string path, string path2, string path3)
         {
-            string classLogInfo = "\n-----------------------   GKSFileManager - 6   -----------------------\n";
+            string classLogInfo = "\nn=========================================   GKSFileManager - 6   n=========================================\n";
             string ZipFileLog = "";
 
             try
