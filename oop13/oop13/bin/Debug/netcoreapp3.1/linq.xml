@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <bookstore name="Анна Каренина">
+    <author>Толстой</author>
+    <city>Alnwick</city>
+  </bookstore>
+  <bookstore name="Стихотворения и поэмы">
+    <author>Маяковский</author>
+    <city>Paris</city>
+  </bookstore>
+</root>

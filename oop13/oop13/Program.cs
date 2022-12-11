@@ -39,6 +39,13 @@ namespace oop13
                 @"F:\лабы\ООП\labs\oop13\System.Collections.Generic.List`1[oop13.Book].xml");
             var jsonList = CustomSerializer<Book>.DeserializeToList(
                 @"F:\лабы\ООП\labs\oop13\System.Collections.Generic.List`1[oop13.Book].json");
+
+            //3
+            XMLSelector.SelectByName("Война и мир", @"F:\лабы\ООП\labs\oop13\System.Collections.Generic.List`1[oop13.Book].xml");
+            XMLSelector.SelectByBook("Book", @"F:\лабы\ООП\labs\oop13\System.Collections.Generic.List`1[oop13.Book].xml");
+
+           
+
         }
     }
 }

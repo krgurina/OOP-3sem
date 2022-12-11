@@ -3,6 +3,7 @@
     <a1:Book id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/oop13/oop13%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
       <name id="ref-2">Война и мир</name>
       <publishYear>1869</publishYear>
+      <author id="ref-3">Толстой</author>
     </a1:Book>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

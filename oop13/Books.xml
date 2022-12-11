@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <bookstore name="Анна Каренина">
+    <author>Толстой</author>
+    <yaer>1878</yaer>
+  </bookstore>
+  <bookstore name="Стихотворения и поэмы">
+    <author>Маяковский</author>
+    <yaer>1995</yaer>
+  </bookstore>
+</root>

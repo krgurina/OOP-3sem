@@ -4,20 +4,24 @@
     <name>Война и мир</name>
     <publishYear>1869</publishYear>
     <author>Толстой</author>
+    <pageNum>0</pageNum>
   </Book>
   <Book>
     <name>Бородино</name>
     <publishYear>1977</publishYear>
     <author>Лермонтов</author>
+    <pageNum>0</pageNum>
   </Book>
   <Book>
     <name>Мастер и Маргарита</name>
     <publishYear>1987</publishYear>
     <author>Булгаков</author>
+    <pageNum>0</pageNum>
   </Book>
   <Book>
     <name>Стихотворения и поэмы</name>
     <publishYear>1995</publishYear>
     <author>Маяковский</author>
+    <pageNum>0</pageNum>
   </Book>
 </ArrayOfBook>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<books>
+  <book name="Анна Каренина">
+    <releaseYear>1878</releaseYear>
+  </book>
+  <book name="Стихотворения и поэмы">
+    <releaseYear>1995</releaseYear>
+  </book>
+</books>

@@ -14,15 +14,16 @@ namespace oop13
     {
         public string name;
         public int publishYear;
-        [NonSerialized]
         public string author;
+        [NonSerialized]
+        public int pageNum;
         public PrintedEdiction(string name, int publishYear, string author)
         {
             this.name = name;
             this.publishYear = publishYear;
             this.author = author;
-
         }
+
         public PrintedEdiction() { }
 
         public override string ToString() => GetType().Name;
