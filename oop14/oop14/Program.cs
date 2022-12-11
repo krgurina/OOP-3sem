@@ -17,8 +17,9 @@ namespace oop14
             //First();
             //Second();///////////
             //Third();
+
             Fourth();
-            //Fifth();
+            Fifth();
         }
 
 
@@ -42,13 +43,8 @@ namespace oop14
             }
         }
 
-
-
-
-
         private static void Second()
         {
-
 
             AppDomain domain = AppDomain.CurrentDomain;    // текущий домен с процессами
             Console.WriteLine("\n\n\n\nТекущий домен:         " + domain.FriendlyName);
@@ -87,13 +83,9 @@ namespace oop14
 
         }
 
-
-
-
         private static void Third()
         {
-            //Thread NumbersThread = new Thread(Numbers);
-            //NumbersThread.Start();
+
             Thread NumbersThread = new Thread(new ParameterizedThreadStart(WriteNums));   // создаем новый поток
             Console.Write("Задайте число: "); int numb = Convert.ToInt32(Console.ReadLine());
             NumbersThread.Start(numb);  // запускаем его
@@ -108,7 +100,6 @@ namespace oop14
             Console.WriteLine("ID потока:   " + NumbersThread.ManagedThreadId);
             Console.WriteLine("---------------------");
             Thread.Sleep(1000);
-
 
             //Thread.Sleep(2000);  // приостанавливает выполнение потока, в котором он был вызван
 
@@ -132,29 +123,21 @@ namespace oop14
 
         private static void Fourth()
         {
-            //using (StreamWriter sw = new StreamWriter(@"F:\лабы\ООП\labs\oop14\numbers2.txt", false, System.Text.Encoding.Default))
-            ////{
+
                 Console.WriteLine("\n\n\nПотоки чётных и нечётных чисел:");
                 Thread evenThread = new Thread(Methods.EvenNumbers);
                 evenThread.Priority = ThreadPriority.AboveNormal;
                 evenThread.Start();
-                //evenThread.Join();                  
-                //sw.WriteLine(evenThread);
-
+                //evenThread.Join();  // сначала чётные потом нечетные                
 
                 Console.WriteLine();
                 Thread oddThread = new Thread(Methods.OddNumbers);
                 oddThread.Priority = ThreadPriority.BelowNormal;
                 oddThread.Start();
-                oddThread.Join();
+                oddThread.Join();   //чередование четных и нечётных
                 Console.WriteLine("\n");
-            //    sw.WriteLine(oddThread);
 
-  //          }
         }
-
-
-
 
 
         private static void Fifth()
@@ -162,9 +145,10 @@ namespace oop14
             TimerCallback timerCallback = new TimerCallback(WhatTimeIsIt);
 
             // позволяет запускать определенные действия по истечению некоторого периода времени:
-            Timer timer = new Timer(timerCallback, null, 500, 1000);
-            Thread.Sleep(5000);
-            timer.Change(Timeout.Infinite, 2000);
+            Timer timer = new Timer(timerCallback, null, 500, 1000);       /* null - параметр, которого нет, 500 - время, через которое запустится процесс с таймером, 
+                                                                            * 1000 - периодичность таймера (интервал между вызовами метода делегата). */
+            Thread.Sleep(5000);                                             // 500 - ждем и не закрываем поток
+            timer.Change(Timeout.Infinite, 2000);                           // уничтожение таймера
 
             void WhatTimeIsIt(object obj)
             {
@@ -173,7 +157,9 @@ namespace oop14
             Console.ReadLine();
             Console.ReadLine();
         }
+        
     }
+
 
     class Methods
     {
@@ -194,6 +180,7 @@ namespace oop14
                 }
             }
         }
+
         public static void EvenNumbers()
         {
             using (StreamWriter sw = new StreamWriter(@"F:\лабы\ООП\labs\oop14\numbers.txt", true, System.Text.Encoding.Default))
