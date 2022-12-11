@@ -16,8 +16,9 @@ namespace oop14
         {
             //First();
             //Second();///////////
-            Third();
-            
+            //Third();
+            Fourth();
+            //Fifth();
         }
 
 
@@ -129,6 +130,88 @@ namespace oop14
         }
 
 
-       
+        private static void Fourth()
+        {
+            //using (StreamWriter sw = new StreamWriter(@"F:\лабы\ООП\labs\oop14\numbers2.txt", false, System.Text.Encoding.Default))
+            ////{
+                Console.WriteLine("\n\n\nПотоки чётных и нечётных чисел:");
+                Thread evenThread = new Thread(Methods.EvenNumbers);
+                evenThread.Priority = ThreadPriority.AboveNormal;
+                evenThread.Start();
+                //evenThread.Join();                  
+                //sw.WriteLine(evenThread);
+
+
+                Console.WriteLine();
+                Thread oddThread = new Thread(Methods.OddNumbers);
+                oddThread.Priority = ThreadPriority.BelowNormal;
+                oddThread.Start();
+                oddThread.Join();
+                Console.WriteLine("\n");
+            //    sw.WriteLine(oddThread);
+
+  //          }
+        }
+
+
+
+
+
+        private static void Fifth()
+        {
+            TimerCallback timerCallback = new TimerCallback(WhatTimeIsIt);
+
+            // позволяет запускать определенные действия по истечению некоторого периода времени:
+            Timer timer = new Timer(timerCallback, null, 500, 1000);
+            Thread.Sleep(5000);
+            timer.Change(Timeout.Infinite, 2000);
+
+            void WhatTimeIsIt(object obj)
+            {
+                Console.WriteLine($"It's {DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}");
+            }
+            Console.ReadLine();
+            Console.ReadLine();
+        }
+    }
+
+    class Methods
+    {
+        public static void OddNumbers()
+        {
+            using (StreamWriter sw = new StreamWriter(@"F:\лабы\ООП\labs\oop14\numbers2.txt", false, System.Text.Encoding.Default))
+            {
+                for (int i = 0; i <= 20; i++)
+                {
+                    if (i % 2 != 0)
+                    {
+
+                        sw.WriteLine(i);
+                        Console.Write($"{i} ");
+                        Thread.Sleep(120);
+
+                    }
+                }
+            }
+        }
+        public static void EvenNumbers()
+        {
+            using (StreamWriter sw = new StreamWriter(@"F:\лабы\ООП\labs\oop14\numbers.txt", true, System.Text.Encoding.Default))
+            {
+                for (int i = 0; i <= 20; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+
+                        sw.WriteLine(i);
+                        Console.Write($"{i} ");
+                        Thread.Sleep(120);
+
+                    }
+                }
+            }
+        }
+
+
     }
 }
