@@ -8,4 +8,8 @@
     <author>Маяковский</author>
     <yaer>1995</yaer>
   </bookstore>
+  <bookstore name="Война и мир">
+    <author>Толстой</author>
+    <yaer>1869</yaer>
+  </bookstore>
 </root>

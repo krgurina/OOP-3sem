@@ -15,8 +15,7 @@ namespace oop13
         public string name;
         public int publishYear;
         public string author;
-        [NonSerialized]
-        public int pageNum;
+       
         public PrintedEdiction(string name, int publishYear, string author)
         {
             this.name = name;
@@ -34,6 +33,8 @@ namespace oop13
     [Serializable]
     public class Book : PrintedEdiction
     {
+        [NonSerialized]
+        public int pageNum;
         public Book(string name, int publishYear, string author) : base(name, publishYear, author)
         {
             this.name = name;
