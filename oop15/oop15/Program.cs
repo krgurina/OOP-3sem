@@ -17,8 +17,16 @@ namespace oop15
             //First();
             Console.WriteLine();
 
-            Second();
+            //Second();
             Console.WriteLine();
+
+            //Third();
+            Console.WriteLine();
+
+
+            Forth();
+            Console.WriteLine();
+
         }
 
         static void First()
@@ -63,6 +71,51 @@ namespace oop15
                 if (task.IsCanceled)
                     Console.WriteLine("Задача отменена");
             }
+        }
+
+        static void Third()
+        {
+            Task<int> first = new Task<int>(() => new Random().Next(1, 9) * 100);
+            Task<int> second = new Task<int>(() => new Random().Next(0, 9) * 10);
+            Task<int> third = new Task<int>(() => new Random().Next(0, 9));
+
+            first.Start();
+            second.Start();
+            third.Start();
+            first.Wait();
+            second.Wait();
+            third.Wait();
+
+            Task<int> number = new Task<int>(() => first.Result + second.Result + third.Result);
+            number.Start();
+            Console.WriteLine($"Number: {number.Result}");
+        }
+
+
+        static void Forth()
+        {
+            Task<int> task4 = new Task<int>(() => 100 + 10 + 1);
+            Task show = task4.ContinueWith(sum => Console.WriteLine($"Sum = {sum.Result}"));
+            task4.Start();
+            show.Wait();
+
+            Task<double> sqrt = new Task<double>(() => Math.Sqrt(49));
+            TaskAwaiter<double> awaiter = sqrt.GetAwaiter();
+            awaiter.OnCompleted(() => Console.WriteLine($"Result is: {sqrt.Result}"));
+            sqrt.Start();
+            sqrt.Wait();
+            awaiter.GetResult();
+            Thread.Sleep(10);
+        }
+
+
+        static void Factorial(int num)
+        {
+            int result = 1;
+            for (int i = 1; i <= num; i++)
+                result *= i;
+
+            Console.WriteLine($"Факториал числа {num} равен {result}");
         }
 
 
