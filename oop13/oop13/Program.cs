@@ -32,7 +32,13 @@ namespace oop13
             var jsonBook1 = CustomSerializer<Book>.Deserialize(@"F:\лабы\ООП\labs\oop13\oop13.Book.json");
 
             //2
-            
+            List<Book> books = new List<Book>() { book1, book2, book3, book4 };
+            CustomSerializer<Book>.Serialize(books, SERIALIZETYPE.JSON, @"F:\лабы\ООП\labs\oop13");
+            CustomSerializer<Book>.Serialize(books, SERIALIZETYPE.XML, @"F:\лабы\ООП\labs\oop13");
+            var xmlList = CustomSerializer<Book>.DeserializeToList(
+                @"F:\лабы\ООП\labs\oop13\System.Collections.Generic.List`1[oop13.Book].xml");
+            var jsonList = CustomSerializer<Book>.DeserializeToList(
+                @"F:\лабы\ООП\labs\oop13\System.Collections.Generic.List`1[oop13.Book].json");
         }
     }
 }

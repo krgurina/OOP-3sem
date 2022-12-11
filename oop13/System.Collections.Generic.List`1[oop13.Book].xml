@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <name>Война и мир</name>
+    <publishYear>1869</publishYear>
+    <author>Толстой</author>
+  </Book>
+  <Book>
+    <name>Бородино</name>
+    <publishYear>1977</publishYear>
+    <author>Лермонтов</author>
+  </Book>
+  <Book>
+    <name>Мастер и Маргарита</name>
+    <publishYear>1987</publishYear>
+    <author>Булгаков</author>
+  </Book>
+  <Book>
+    <name>Стихотворения и поэмы</name>
+    <publishYear>1995</publishYear>
+    <author>Маяковский</author>
+  </Book>
+</ArrayOfBook>
