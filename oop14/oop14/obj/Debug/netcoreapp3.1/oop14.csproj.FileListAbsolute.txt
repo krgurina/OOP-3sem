@@ -1,0 +1,14 @@
+F:\лабы\ООП\labs\oop14\oop14\bin\Debug\netcoreapp3.1\oop14.exe
+F:\лабы\ООП\labs\oop14\oop14\bin\Debug\netcoreapp3.1\oop14.deps.json
+F:\лабы\ООП\labs\oop14\oop14\bin\Debug\netcoreapp3.1\oop14.runtimeconfig.json
+F:\лабы\ООП\labs\oop14\oop14\bin\Debug\netcoreapp3.1\oop14.runtimeconfig.dev.json
+F:\лабы\ООП\labs\oop14\oop14\bin\Debug\netcoreapp3.1\oop14.dll
+F:\лабы\ООП\labs\oop14\oop14\bin\Debug\netcoreapp3.1\oop14.pdb
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.csproj.AssemblyReference.cache
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.AssemblyInfoInputs.cache
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.AssemblyInfo.cs
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.dll
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.pdb
+F:\лабы\ООП\labs\oop14\oop14\obj\Debug\netcoreapp3.1\oop14.genruntimeconfig.cache
