@@ -24,7 +24,13 @@ namespace oop15
             Console.WriteLine();
 
 
-            Forth();
+            //Forth();
+            Console.WriteLine();
+
+            //Fifth();
+            Console.WriteLine();
+
+            Sixth();
             Console.WriteLine();
 
         }
@@ -116,6 +122,62 @@ namespace oop15
                 result *= i;
 
             Console.WriteLine($"Факториал числа {num} равен {result}");
+        }
+
+        static void Fifth()
+        {
+            int[] arr1 = new int[1000000];
+            int[] arr2 = new int[1000000];
+            Stopwatch stopwatch2 = new Stopwatch();
+            stopwatch2.Start();
+            Parallel.For(0, arr1.Length, t => arr1[t] = t);
+            stopwatch2.Stop();
+            Console.WriteLine($"Parallel.For: {stopwatch2.Elapsed}");       // вывод повторяющегося события
+
+            Stopwatch stopwatch3 = new Stopwatch();
+            stopwatch3.Start();
+            for (int i = 0; i < arr2.Length; i++)
+                arr2[i] = i + 1;
+
+            stopwatch3.Stop();
+            Console.WriteLine("for: " + stopwatch3.Elapsed);            // вывод повторяющегося события
+            Stopwatch stopwatch4 = new Stopwatch();
+            stopwatch4.Start();
+            Parallel.ForEach<int>(new List<int>() { 1, 2, 3, 4 }, Factorial);
+            stopwatch4.Stop();
+            Console.WriteLine("Parallel.Foreach: " + stopwatch4.Elapsed);   // вывод повторяющегося события
+
+            Stopwatch stopwatch5 = new Stopwatch();
+            stopwatch5.Start();
+            foreach (var m in new List<int>() { 1, 2, 3, 4 })
+            {
+                Factorial(m);
+            }
+            stopwatch5.Stop();
+            Console.WriteLine("foreach: " + stopwatch5.Elapsed);              // вывод повторяющегося события
+            Console.WriteLine();
+        }
+
+
+        static void Sixth()
+        {
+            int count = 0;
+            int maxCount = 100;
+            Parallel.Invoke(() =>      // в качестве параметра принимает массив объектов Action
+            {
+                while (count < maxCount)        // выполняется на одном ядре целевой машины
+                {
+                    count++;
+                    Console.WriteLine($"1: {count}");
+                }
+            }, () =>
+            {
+                while (count < maxCount)         // выполняется на другом ядре целевой машины
+                {
+                    count++;
+                    Console.WriteLine($"2: {count}");
+                }
+            });
         }
 
 
