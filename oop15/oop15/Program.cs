@@ -30,9 +30,17 @@ namespace oop15
             //Fifth();
             Console.WriteLine();
 
-            Sixth();
+            //Sixth();
             Console.WriteLine();
 
+
+            //Seventh(); /////////////
+            Console.WriteLine();
+
+            Eighth();
+            Console.WriteLine();
+
+            Console.ReadKey();
         }
 
         static void First()
@@ -180,7 +188,88 @@ namespace oop15
             });
         }
 
+        static void Seventh()
+        {
+            BlockingCollection<string> bc = new BlockingCollection<string>(5);      // Коллекция, которая осуществляет блокировку и ожидает, пока не появится возможность
+                                                                                    // выполнить действие по добавлению или извлечению элемента
 
+            Task[] sellers = new Task[10]
+            {
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Стол"); Console.WriteLine("Товар поступил");} }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Шкаф");Console.WriteLine("Товар поступил"); } }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Зеркало");Console.WriteLine("Товар поступил"); } }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Что-то"); Console.WriteLine("Товар поступил");} }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Картина"); Console.WriteLine("Товар поступил");} }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Вещь"); Console.WriteLine("Товар поступил");} }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Котик"); Console.WriteLine("Товар поступил");} }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Собачка"); Console.WriteLine("Товар поступил");} }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Телевизор");Console.WriteLine("Товар поступил"); } }),
+                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Холодильник"); Console.WriteLine("Товар поступил");} }),
+
+            };
+
+            Task[] consumers = new Task[5]
+            {
+                new Task(() => { while (true) { Thread.Sleep(300); bc.Take(); Console.WriteLine("Товар забрали");} }),
+                new Task(() => { while (true) { Thread.Sleep(500); bc.Take(); Console.WriteLine("Товар забрали");} }),
+                new Task(() => { while (true) { Thread.Sleep(500); bc.Take(); Console.WriteLine("Товар забрали");} }),
+                new Task(() => { while (true) { Thread.Sleep(400); bc.Take(); Console.WriteLine("Товар забрали");} }),
+                new Task(() => { while (true) { Thread.Sleep(250); bc.Take(); Console.WriteLine("Товар забрали"); } })
+            };
+
+            foreach (var i in sellers)
+                if (i.Status != TaskStatus.Running)
+                {
+                    i.Start();
+
+                }
+
+
+            foreach (var i in consumers)
+                if (i.Status != TaskStatus.Running)
+                {
+                    i.Start();
+
+                }
+
+            int count = 1;
+            while (true)
+            {
+                if (bc.Count != count && bc.Count != 0)
+                {
+                    count = bc.Count;
+                    Thread.Sleep(500);
+                    Console.Clear();
+                    Console.WriteLine("--- СКЛАД ---");
+
+                    foreach (var i in bc)
+                        Console.WriteLine(i);
+                }
+            }
+        }
+
+        static void Eighth()
+        {
+            void Factorial()
+            {
+                int result = 1;
+                for (int i = 1; i <= 6; i++)
+                {
+                    result *= i;
+                }
+                Thread.Sleep(1000);
+                Console.WriteLine($"Факториал равен {result}");
+            }
+
+            async void FactorialAsync()
+
+            {
+                Console.WriteLine("Начало метода FactorialAsync");
+                await Task.Run(() => Factorial());                  // выполняется асинхронно
+                Console.WriteLine("Конец метода FactorialAsync");
+            }
+            FactorialAsync();
+        }
 
 
 
