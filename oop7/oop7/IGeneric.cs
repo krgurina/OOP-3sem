@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace oop7
 {
-    //1) Создайте обобщенный интерфейс с операциями добавить, удалить, просмотреть.
+    //Создайте обобщенный интерфейс с операциями добавить, удалить, просмотреть.
 
-    public interface IGeneric<T>//where T:PrintedEdiction
+    public interface IGeneric<T>//where T:
     {
         void Add(T element);
         public void Delete(T deleteEl);

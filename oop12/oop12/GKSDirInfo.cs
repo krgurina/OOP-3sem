@@ -17,7 +17,7 @@ namespace oop12
             if (dirInfo.Exists)
                 DirInfoLog = "\n=========================================   GKSDirInfo   =========================================\n" +
                              "\nКоличество файлов:        " + dirInfo.GetFiles().Length +
-                             "\nВремя создания:           " + dirInfo.LastWriteTime +
+                             "\nВремя создания:           " + dirInfo.CreationTime +
                              "\nКол-во поддиректориев:    " + dirInfo.GetDirectories().Length +
                              "\nРодительский директорий:  " + dirInfo.Parent.Name;
 

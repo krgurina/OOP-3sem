@@ -1,0 +1,14 @@
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\bin\Debug\netcoreapp3.1\CollList-List-T.exe
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\bin\Debug\netcoreapp3.1\CollList-List-T.deps.json
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\bin\Debug\netcoreapp3.1\CollList-List-T.runtimeconfig.json
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\bin\Debug\netcoreapp3.1\CollList-List-T.runtimeconfig.dev.json
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\bin\Debug\netcoreapp3.1\CollList-List-T.dll
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\bin\Debug\netcoreapp3.1\CollList-List-T.pdb
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.csproj.AssemblyReference.cache
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.AssemblyInfoInputs.cache
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.AssemblyInfo.cs
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.dll
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.pdb
+F:\лабы\ООП\кр2\CollList-List-T\CollList-List-T\obj\Debug\netcoreapp3.1\CollList-List-T.genruntimeconfig.cache

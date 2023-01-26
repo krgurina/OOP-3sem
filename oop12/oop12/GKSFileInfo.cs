@@ -21,7 +21,9 @@ namespace oop12
                               "\nИмя файла:                " + fileInfo.Name +
                               "\nРазмер файла:             " + fileInfo.Length + " KB" +
                               "\nРасширение:               " + fileInfo.Extension +
-                              "\nДата изменения:           " + fileInfo.LastWriteTime;
+                              "\nДата изменения:           " + fileInfo.LastWriteTime +
+                              "\nВремя создания:           " + fileInfo.CreationTime;
+
 
             GKSLog.WriteInLog(fileInfoLog);
         }

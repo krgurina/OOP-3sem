@@ -1,0 +1,14 @@
+F:\лабы\ООП\кр2\kr2\kr2\bin\Debug\netcoreapp3.1\kr2.exe
+F:\лабы\ООП\кр2\kr2\kr2\bin\Debug\netcoreapp3.1\kr2.deps.json
+F:\лабы\ООП\кр2\kr2\kr2\bin\Debug\netcoreapp3.1\kr2.runtimeconfig.json
+F:\лабы\ООП\кр2\kr2\kr2\bin\Debug\netcoreapp3.1\kr2.runtimeconfig.dev.json
+F:\лабы\ООП\кр2\kr2\kr2\bin\Debug\netcoreapp3.1\kr2.dll
+F:\лабы\ООП\кр2\kr2\kr2\bin\Debug\netcoreapp3.1\kr2.pdb
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.csproj.AssemblyReference.cache
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.AssemblyInfoInputs.cache
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.AssemblyInfo.cs
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.dll
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.pdb
+F:\лабы\ООП\кр2\kr2\kr2\obj\Debug\netcoreapp3.1\kr2.genruntimeconfig.cache

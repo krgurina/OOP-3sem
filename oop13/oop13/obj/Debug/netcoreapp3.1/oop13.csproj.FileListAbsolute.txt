@@ -13,3 +13,4 @@ F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.csproj.CopyCom
 F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.dll
 F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.pdb
 F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.genruntimeconfig.cache
+F:\лабы\ООП\labs\oop13\oop13\obj\Debug\netcoreapp3.1\oop13.csproj.AssemblyReference.cache

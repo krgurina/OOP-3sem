@@ -12,9 +12,11 @@ namespace oop8
             Game zombie = new Game("Зомби", 150);
             Game pig = new Game("Хрюня", 100);
 
+            //подписываем на событие
             pig.Attack += Pig_Attack;
             user1.Attack += User1_Attack;
             zombie.Attack += Zombie_Attack;
+
             pig.ToAtt(zombie);
             pig.ToAtt(zombie);
             zombie.ToAtt(pig);

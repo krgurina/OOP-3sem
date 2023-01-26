@@ -26,6 +26,7 @@ namespace oop7
             list.Add(element);
             _count++;
         }
+
         internal void Add()
         {
             throw new NotImplementedException("ИСКЛЮЧЕНИЕ: Метод или операция не реализованы!\n");
@@ -53,6 +54,21 @@ namespace oop7
         }
 
         // перегрузки
+
+       
+        public static CollectionType<T> operator +(CollectionType<T> list, T element)
+        {
+            list.Add(element);
+            return list;
+        }
+
+        //public static CollectionType<T> operator >>(CollectionType<T> list, T elem)
+        //{
+        //    list.Delete(elem);
+        //    return list;
+        //}
+
+
         public static bool operator ==(CollectionType<T> t1, CollectionType<T> t2)
         {
             if (t1.list is List<int> || t1.list is List<double>)
@@ -135,100 +151,6 @@ namespace oop7
             return false;
         }
 
-        public static bool operator >(CollectionType<T> c1, CollectionType<T> c2)
-        {
-            if (c1.list is List<int> && c2.list is List<int>)
-            {
-                for (int i = 0; i < c1.list.Count; i++)
-                {
-                    if ((dynamic)c1.list[i] < (dynamic)c2.list[i])
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            if (c1.list is List<string> && c2.list is List<string>)
-            {
-                List<string> tempList1 = new List<string>();
-                tempList1 = c1.list as List<string>;
-                List<string> tempList2 = new List<string>();
-                tempList2 = c2.list as List<string>;
-                {
-                    for (int i = 0; i < c1.list.Count; i++)
-                    {
-                        if (tempList1[i].Length < tempList2[i].Length)
-                        {
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-            }
-            if (c1.list is List<PrintedEdiction>)
-            {
-                List<PrintedEdiction> PrintedEdictionList1 = new List<PrintedEdiction>();
-                PrintedEdictionList1 = c1.list as List<PrintedEdiction>;
-                List<PrintedEdiction> PrintedEdictionList2 = new List<PrintedEdiction>();
-                PrintedEdictionList2 = c2.list as List<PrintedEdiction>;
-                for (int i = 0; i < c1.list.Count; i++)
-                {
-                    if (PrintedEdictionList1[i].PublishYear < PrintedEdictionList2[i].PublishYear)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
-        }
-        public static bool operator <(CollectionType<T> c1, CollectionType<T> c2)
-        {
-            if (c1.list is List<int> && c2.list is List<int>)
-            {
-                for (int i = 0; i < c1.list.Count; i++)
-                {
-                    if ((dynamic)c1.list[i] > (dynamic)c2.list[i])
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            if (c1.list is List<string> && c2.list is List<string>)
-            {
-                List<string> tempList1 = new List<string>();
-                tempList1 = c1.list as List<string>;
-                List<string> tempList2 = new List<string>();
-                tempList2 = c2.list as List<string>;
-                {
-                    for (int i = 0; i < c1.list.Count; i++)
-                    {
-                        if (tempList1[i].Length > tempList2[i].Length)
-                        {
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-            }
-            if (c1.list is List<PrintedEdiction>)
-            {
-                List<PrintedEdiction> PrintedEdictionList1 = new List<PrintedEdiction>();
-                PrintedEdictionList1 = c1.list as List<PrintedEdiction>;
-                List<PrintedEdiction> PrintedEdictionList2 = new List<PrintedEdiction>();
-                PrintedEdictionList2 = c2.list as List<PrintedEdiction>;
-                for (int i = 0; i < c1.list.Count; i++)
-                {
-                    if (PrintedEdictionList1[i].PublishYear > PrintedEdictionList2[i].PublishYear)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
-        }
 
         public static bool operator true(CollectionType<T> c1)
         {
@@ -339,35 +261,14 @@ namespace oop7
 
         }
 
-        //public void ToFile(CollectionType<T> type)
-        //{
-        //    int index = type.Count;
-        //    string[] text = new string[index];
-        //    for (int i = 0; i < index; i++)
-        //    {
-        //        text[i] = Convert.ToString(type.list[i]);
-        //    }
-        //    File.WriteAllLines(@"F:\лабы\ООП\labs\oop7\q.txt", text);
-        //}
-        //public void FromFile()
-        //{
-        //    Console.WriteLine(File.ReadAllText(@"F:\лабы\ООП\labs\oop7\q.txt"));
-        //}
         public static void WriteToFile(CollectionType<T> arr)
         {
             using (StreamWriter file = new StreamWriter(@"F:\лабы\ООП\labs\oop7\q.txt", false))
             {
-                
-                //file.Write("{");
-
                 for(int i=0; i<arr.list.Count;i++)
                 {
                     file.Write($"{arr.list[i]} ");
                 }
-
-                //foreach (var i in arr)
-                //    file.Write($"{i} ");
-                //file.Write("}");
                 file.Close();
             }
         }

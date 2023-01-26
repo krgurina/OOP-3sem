@@ -15,11 +15,11 @@ namespace oop14
         static void Main(string[] args)
         {
             //First();
-            //Second();///////////
+            //Second();
             //Third();
 
             Fourth();
-            Fifth();
+            //Fifth();
         }
 
 
@@ -54,32 +54,12 @@ namespace oop14
             foreach (Assembly ass in domain.GetAssemblies())
                 Console.WriteLine(ass.GetName().Name);
 
-            //1
-            ////Создайте новый домен.
-            //AppDomain newDomain = AppDomain.CreateDomain("New domain");
-            ////Загрузите туда сборку.
-            //newDomain.Load(new AssemblyName("oop14"));
-            //Console.WriteLine("Name of the new domain: " + newDomain.FriendlyName + "\nAssamblies of new domain:");
-            //foreach (Assembly a in newDomain.GetAssemblies())
-            //{
-            //    Console.WriteLine(a.GetName().Name);
-            //}
-            ////Выгрузите домен.
-            //AppDomain.Unload(newDomain);
-            //Console.WriteLine("\nPress any key\n");
-            //Console.ReadKey();
+          
+            AppDomain newDomain = AppDomain.CreateDomain("New Domain"); // создание нового домена
+            newDomain.Load(Assembly.GetExecutingAssembly().FullName);   // загрузка сборки
+            AppDomain.Unload(newDomain);                                // выгрузка домена + всех содержащихся в нём сборок
 
-            //2
-            //AppDomain newDomain = AppDomain.CreateDomain("New Domain"); // создание нового домена
-            //newDomain.Load(Assembly.GetExecutingAssembly().FullName);   // загрузка сборки
-            //AppDomain.Unload(newDomain);                                // выгрузка домена + всех содержащихся в нём сборок
-
-            //3
-            //Создайте новый домен. Загрузите туда сборку. Выгрузите домен.
-            //AppDomain newDomain = AppDomain.CreateDomain("NewDomain");
-            //newDomain.Load(Assembly.GetExecutingAssembly().GetName());
-            //AppDomain.Unload(newDomain);
-
+          
 
         }
 
@@ -124,18 +104,18 @@ namespace oop14
         private static void Fourth()
         {
 
-                Console.WriteLine("\n\n\nПотоки чётных и нечётных чисел:");
-                Thread evenThread = new Thread(Methods.EvenNumbers);
-                evenThread.Priority = ThreadPriority.AboveNormal;
-                evenThread.Start();
-                //evenThread.Join();  // сначала чётные потом нечетные                
+            Console.WriteLine("\n\n\nПотоки чётных и нечётных чисел:");
+            Thread evenThread = new Thread(Methods.EvenNumbers);
+            evenThread.Priority = ThreadPriority.AboveNormal;
+            evenThread.Start();
+            //evenThread.Join();  // сначала чётные потом нечетные                
 
-                Console.WriteLine();
-                Thread oddThread = new Thread(Methods.OddNumbers);
-                oddThread.Priority = ThreadPriority.BelowNormal;
-                oddThread.Start();
-                oddThread.Join();   //чередование четных и нечётных
-                Console.WriteLine("\n");
+            Console.WriteLine();
+            Thread oddThread = new Thread(Methods.OddNumbers);
+            oddThread.Priority = ThreadPriority.BelowNormal;
+            oddThread.Start();
+            oddThread.Join();   //чередование четных и нечётных
+            Console.WriteLine("\n");
 
         }
 
@@ -157,7 +137,7 @@ namespace oop14
             Console.ReadLine();
             Console.ReadLine();
         }
-        
+
     }
 
 

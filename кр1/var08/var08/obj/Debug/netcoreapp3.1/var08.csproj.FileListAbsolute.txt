@@ -1,0 +1,14 @@
+F:\лабы\ООП\кр1\var08\var08\bin\Debug\netcoreapp3.1\var08.exe
+F:\лабы\ООП\кр1\var08\var08\bin\Debug\netcoreapp3.1\var08.deps.json
+F:\лабы\ООП\кр1\var08\var08\bin\Debug\netcoreapp3.1\var08.runtimeconfig.json
+F:\лабы\ООП\кр1\var08\var08\bin\Debug\netcoreapp3.1\var08.runtimeconfig.dev.json
+F:\лабы\ООП\кр1\var08\var08\bin\Debug\netcoreapp3.1\var08.dll
+F:\лабы\ООП\кр1\var08\var08\bin\Debug\netcoreapp3.1\var08.pdb
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.csproj.AssemblyReference.cache
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.AssemblyInfoInputs.cache
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.AssemblyInfo.cs
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.dll
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.pdb
+F:\лабы\ООП\кр1\var08\var08\obj\Debug\netcoreapp3.1\var08.genruntimeconfig.cache

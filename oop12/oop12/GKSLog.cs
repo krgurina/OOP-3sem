@@ -8,25 +8,25 @@ namespace oop12
     public static class GKSLog
     {
         // методs записи в текстовый файл
-        public static void WriteLogInfo()               /// запись в файл лога инфы о работе самого логгера
+        public static void WriteLogInfo()   // запись в файл лога инфы о работе самого логгера
         {
-            string loGKSth = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
-            using (StreamWriter sw = new StreamWriter(loGKSth, true, System.Text.Encoding.Default))
+            string logPath = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
+            using (StreamWriter sw = new StreamWriter(logPath, true, System.Text.Encoding.Default))
             {
                 sw.WriteLine("\n================================================================================================\n");
                 sw.WriteLine("\n===========================================   GKSLog   =========================================\n");
                 sw.WriteLine("\n================================================================================================\n");
-                sw.WriteLine("Имя файла лога:           " + Path.GetFileName(loGKSth));
-                sw.WriteLine("Полный путь лога:         " + loGKSth);
+                sw.WriteLine("Имя файла лога:           " + Path.GetFileName(logPath));
+                sw.WriteLine("Полный путь лога:         " + logPath);
                 sw.WriteLine("Время записи лога:        " + DateTime.Now);
             }
 
         }
 
-        public static void WriteInLog(string message)   /// запись в файл лога инфы из остальных классов
+        public static void WriteInLog(string message)   // запись в файл лога инфы из остальных классов
         {
-            string loGKSth = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
-            using (StreamWriter sw = new StreamWriter(loGKSth, true, System.Text.Encoding.Default))
+            string logPath = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
+            using (StreamWriter sw = new StreamWriter(logPath, true, System.Text.Encoding.Default))
                 sw.WriteLine(message);
         }
 
@@ -34,8 +34,8 @@ namespace oop12
         //метод чтения
         public static string ReadLog()
         {
-            string loGKSth = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
-            StreamReader sr = new StreamReader(loGKSth);
+            string logPath = Path.GetFullPath(@"F:\лабы\ООП\labs\oop12\oop12\gkslog.txt");
+            StreamReader sr = new StreamReader(logPath);
             return sr.ReadToEnd();
         }
 

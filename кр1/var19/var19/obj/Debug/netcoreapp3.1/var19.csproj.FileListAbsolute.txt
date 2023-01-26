@@ -1,0 +1,14 @@
+F:\лабы\ООП\кр1\var19\var19\bin\Debug\netcoreapp3.1\var19.exe
+F:\лабы\ООП\кр1\var19\var19\bin\Debug\netcoreapp3.1\var19.deps.json
+F:\лабы\ООП\кр1\var19\var19\bin\Debug\netcoreapp3.1\var19.runtimeconfig.json
+F:\лабы\ООП\кр1\var19\var19\bin\Debug\netcoreapp3.1\var19.runtimeconfig.dev.json
+F:\лабы\ООП\кр1\var19\var19\bin\Debug\netcoreapp3.1\var19.dll
+F:\лабы\ООП\кр1\var19\var19\bin\Debug\netcoreapp3.1\var19.pdb
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.csproj.AssemblyReference.cache
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.AssemblyInfoInputs.cache
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.AssemblyInfo.cs
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.dll
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.pdb
+F:\лабы\ООП\кр1\var19\var19\obj\Debug\netcoreapp3.1\var19.genruntimeconfig.cache

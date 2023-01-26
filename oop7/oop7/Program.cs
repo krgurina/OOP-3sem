@@ -40,7 +40,7 @@ namespace oop7
                 intCollection.Add(11);
                 intCollection.Add(22);
                 intCollection.Add(33);
-                intCollection.Add(44);
+                intCollection += 44;
                 intCollection.Show();
                 intCollection.Delete(11);
                 intCollection.Show();
@@ -52,6 +52,7 @@ namespace oop7
                 strCollection.Add("eee");
                 strCollection.Show();
                 strCollection.Delete("qqq");
+                strCollection += "qqqqq";
                 strCollection.Show();
 
                 //исключение
@@ -105,8 +106,6 @@ namespace oop7
 
                 Console.WriteLine("Тест eqals");
                 Console.WriteLine(intListCollection.Equals(intListCollection2));
-
-                //пофиксить
                 Console.WriteLine(strCollection.Equals(strCollection2));
 
                 ////чтение из файла

@@ -76,10 +76,10 @@ namespace oop13
             root.Add(bookstore2);
             root.Add(bookstore3);
             xdoc.Add(root);
-            xdoc.Save(@"F:\лабы\ООП\labs\oop13\Books.xml");
-            //сохраняем в файл
+            xdoc.Save(@"F:\лабы\ООП\labs\oop13\Books.xml"); //сохраняем в файл
 
-            Console.WriteLine("Запрос 1: по автору(Толстой)"); //1-й запрос
+            //запросы
+            Console.WriteLine("Запрос 1: по автору(Толстой)"); 
             var items = xdoc.Element("root").Elements("bookstore")
                 .Where(p => p.Element("author").Value == "Толстой")
                 .Select(p => p);

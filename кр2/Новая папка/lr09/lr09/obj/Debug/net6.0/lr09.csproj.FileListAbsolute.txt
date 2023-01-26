@@ -1,0 +1,15 @@
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.csproj.AssemblyReference.cache
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.AssemblyInfoInputs.cache
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.AssemblyInfo.cs
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.csproj.CoreCompileInputs.cache
+C:\Users\looog\source\repos\lr09\lr09\bin\Debug\net6.0\lr09.exe
+C:\Users\looog\source\repos\lr09\lr09\bin\Debug\net6.0\lr09.deps.json
+C:\Users\looog\source\repos\lr09\lr09\bin\Debug\net6.0\lr09.runtimeconfig.json
+C:\Users\looog\source\repos\lr09\lr09\bin\Debug\net6.0\lr09.dll
+C:\Users\looog\source\repos\lr09\lr09\bin\Debug\net6.0\lr09.pdb
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.dll
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\refint\lr09.dll
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.pdb
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\lr09.genruntimeconfig.cache
+C:\Users\looog\source\repos\lr09\lr09\obj\Debug\net6.0\ref\lr09.dll

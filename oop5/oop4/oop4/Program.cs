@@ -140,7 +140,7 @@ namespace oop4
             book1 = controller.ReadBook();
             magazine1 = controller.ReadMagazine();
             textBook1 = controller.ReadTextBook();
-
+            Console.WriteLine(book1);
             Library library2 = new Library(book1, magazine1, textBook1);
 
             Console.WriteLine("\n\n\n ________________Для лабораторной работы №6_________________\n");
@@ -268,7 +268,51 @@ namespace oop4
             //Book bk4 = new Book("wwwww", "Преступление и наказание", 2023, 22, "русская классика");
             //Debug.Assert(bk4.PublishYear > 2022, "Год печати не может быть больше 2022");
 
+            //переброс по стеку
 
+            static int GetYear() {
+                try
+                {
+                    Book bk2 = new Book("wwwww", "Преступление и наказание", 2023, 22, "русская классика");
+
+                    if (bk2.PublishYear > 2022)
+                    {
+                      
+                        throw new Exception("Неверный год!");
+                        
+                    }
+                    
+                    else return bk2.PublishYear;
+                    return 0;
+                }
+                catch (Exception e)
+                {
+                    throw e;
+
+                }
+            }
+
+            static int UseYear()
+            {
+                try
+                {
+                    if (GetYear() is int)
+                    {
+                        return GetYear() + 10;
+                    }
+                    else return 0;
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message + "Книги такого года нет!\n");
+                    return 0;
+                }
+            }
+
+            UseYear();
+
+            
 
 
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Diagnostics;
+using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Collections.Concurrent;
 
@@ -12,33 +12,27 @@ namespace oop15
 {
     class Program
     {
+        public static int cus = 1;
         static void Main(string[] args)
         {
+
             //First();
-            Console.WriteLine();
 
             //Second();
-            Console.WriteLine();
 
             //Third();
-            Console.WriteLine();
-
 
             //Forth();
-            Console.WriteLine();
 
             //Fifth();
-            Console.WriteLine();
 
             //Sixth();
-            Console.WriteLine();
 
+            //Seventh(); 
 
-            //Seventh(); /////////////
-            Console.WriteLine();
+            //Eighth();
 
-            Eighth();
-            Console.WriteLine();
+           // Ninth();
 
             Console.ReadKey();
         }
@@ -73,6 +67,24 @@ namespace oop15
 
         static void Second()
         {
+
+            AppDomain domain = AppDomain.CurrentDomain;    // текущий домен с процессами
+            Console.WriteLine("\n\n\n\nТекущий домен:         " + domain.FriendlyName);
+            Console.WriteLine("Базовый каталог:       " + domain.BaseDirectory);
+            Console.WriteLine("Детали конфигурации:   " + domain.SetupInformation);
+            Console.WriteLine("Все сборки в домене:\n");
+            foreach (Assembly ass in domain.GetAssemblies())
+                Console.WriteLine(ass.GetName().Name);
+
+
+            AppDomain newDomain = AppDomain.CreateDomain("New Domain"); // создание нового домена
+            newDomain.Load(Assembly.GetExecutingAssembly().FullName);   // загрузка сборки
+            AppDomain.Unload(newDomain);                                // выгрузка домена + всех содержащихся в нём сборок
+
+        }
+
+        static void Third()
+        {
             CancellationTokenSource cancellation = new CancellationTokenSource();
             Task task = Task.Run(() => MulByVector(1000, cancellation), cancellation.Token);
             try
@@ -85,10 +97,13 @@ namespace oop15
                 if (task.IsCanceled)
                     Console.WriteLine("Задача отменена");
             }
+
         }
 
-        static void Third()
+
+        static void Forth()
         {
+
             Task<int> first = new Task<int>(() => new Random().Next(1, 9) * 100);
             Task<int> second = new Task<int>(() => new Random().Next(0, 9) * 10);
             Task<int> third = new Task<int>(() => new Random().Next(0, 9));
@@ -103,10 +118,20 @@ namespace oop15
             Task<int> number = new Task<int>(() => first.Result + second.Result + third.Result);
             number.Start();
             Console.WriteLine($"Number: {number.Result}");
+
         }
 
 
-        static void Forth()
+        static void Factorial(int num)
+        {
+            int result = 1;
+            for (int i = 1; i <= num; i++)
+                result *= i;
+
+            Console.WriteLine($"Факториал числа {num} равен {result}");
+        }
+
+        static void Fifth()
         {
             Task<int> task4 = new Task<int>(() => 100 + 10 + 1);
             Task show = task4.ContinueWith(sum => Console.WriteLine($"Sum = {sum.Result}"));
@@ -123,16 +148,7 @@ namespace oop15
         }
 
 
-        static void Factorial(int num)
-        {
-            int result = 1;
-            for (int i = 1; i <= num; i++)
-                result *= i;
-
-            Console.WriteLine($"Факториал числа {num} равен {result}");
-        }
-
-        static void Fifth()
+        static void Sixth()
         {
             int[] arr1 = new int[1000000];
             int[] arr2 = new int[1000000];
@@ -164,11 +180,12 @@ namespace oop15
             stopwatch5.Stop();
             Console.WriteLine("foreach: " + stopwatch5.Elapsed);              // вывод повторяющегося события
             Console.WriteLine();
+
         }
 
-
-        static void Sixth()
+        static void Seventh()
         {
+
             int count = 0;
             int maxCount = 100;
             Parallel.Invoke(() =>      // в качестве параметра принимает массив объектов Action
@@ -186,69 +203,53 @@ namespace oop15
                     Console.WriteLine($"2: {count}");
                 }
             });
-        }
 
-        static void Seventh()
-        {
-            BlockingCollection<string> bc = new BlockingCollection<string>(5);      // Коллекция, которая осуществляет блокировку и ожидает, пока не появится возможность
-                                                                                    // выполнить действие по добавлению или извлечению элемента
-
-            Task[] sellers = new Task[10]
-            {
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Стол"); Console.WriteLine("Товар поступил");} }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Шкаф");Console.WriteLine("Товар поступил"); } }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Зеркало");Console.WriteLine("Товар поступил"); } }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Что-то"); Console.WriteLine("Товар поступил");} }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Картина"); Console.WriteLine("Товар поступил");} }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Вещь"); Console.WriteLine("Товар поступил");} }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Котик"); Console.WriteLine("Товар поступил");} }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Собачка"); Console.WriteLine("Товар поступил");} }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Телевизор");Console.WriteLine("Товар поступил"); } }),
-                new Task(() => { while (true) { Thread.Sleep(700); bc.Add("Холодильник"); Console.WriteLine("Товар поступил");} }),
-
-            };
-
-            Task[] consumers = new Task[5]
-            {
-                new Task(() => { while (true) { Thread.Sleep(300); bc.Take(); Console.WriteLine("Товар забрали");} }),
-                new Task(() => { while (true) { Thread.Sleep(500); bc.Take(); Console.WriteLine("Товар забрали");} }),
-                new Task(() => { while (true) { Thread.Sleep(500); bc.Take(); Console.WriteLine("Товар забрали");} }),
-                new Task(() => { while (true) { Thread.Sleep(400); bc.Take(); Console.WriteLine("Товар забрали");} }),
-                new Task(() => { while (true) { Thread.Sleep(250); bc.Take(); Console.WriteLine("Товар забрали"); } })
-            };
-
-            foreach (var i in sellers)
-                if (i.Status != TaskStatus.Running)
-                {
-                    i.Start();
-
-                }
-
-
-            foreach (var i in consumers)
-                if (i.Status != TaskStatus.Running)
-                {
-                    i.Start();
-
-                }
-
-            int count = 1;
-            while (true)
-            {
-                if (bc.Count != count && bc.Count != 0)
-                {
-                    count = bc.Count;
-                    Thread.Sleep(500);
-                    Console.Clear();
-                    Console.WriteLine("--- СКЛАД ---");
-
-                    foreach (var i in bc)
-                        Console.WriteLine(i);
-                }
-            }
         }
 
         static void Eighth()
+        {
+            BlockingCollection<string> blockcoll = new BlockingCollection<string>();
+            Task Seller = new Task(
+                () =>
+                {
+                    List<string> Appliances = new List<string> { "Fridge", "Microwave", "Plate", "Washing machine", "Toaster" };
+                    int choose = 0;
+                    Random rnd = new Random();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        choose = rnd.Next(0, Appliances.Count - 1);
+                        Console.WriteLine($"Add {Appliances[choose]}");
+                        blockcoll.Add(Appliances[choose]);
+                        Appliances.RemoveAt(choose);
+                        Thread.Sleep(choose);
+                    }
+                    blockcoll.CompleteAdding();
+                });
+
+            Task Customer = new Task(
+                () =>
+                {
+                    string str;
+                    while (blockcoll.IsCompleted == false)
+                    {
+                        if (blockcoll.TryTake(out str) == true)
+                            Console.WriteLine($"Selled: {str} to Customer{cus}");
+                        else
+                            Console.WriteLine($"Customer{cus} bought nothing and left");
+                        cus++;
+                    }
+
+                });
+
+            Seller.Start();
+            Customer.Start();
+            Customer.Wait();
+            Seller.Wait();
+
+
+        }
+
+        static void Ninth()
         {
             void Factorial()
             {
@@ -270,8 +271,6 @@ namespace oop15
             }
             FactorialAsync();
         }
-
-
 
 
 

@@ -23,7 +23,8 @@ namespace oop11
         public static ConstructorInfo PublicConstruct(object obj)
         {
             Type type = obj.GetType();
-            ConstructorInfo[] constrArray = type.GetConstructors();
+            var bf = BindingFlags.Public;
+            ConstructorInfo[] constrArray = type.GetConstructors(bf);
             foreach (ConstructorInfo constructor in constrArray)
             {
                 if (constrArray.Length > 0)
@@ -41,7 +42,8 @@ namespace oop11
         public static MethodInfo[] Methods(object obj)
         {
             Type type = obj.GetType();
-            MethodInfo[] methods = type.GetMethods();
+            var bf = BindingFlags.Public;
+            MethodInfo[] methods = type.GetMethods(bf);
             Console.WriteLine("\nМетоды класса:");
             foreach (MethodInfo method in methods)
             {

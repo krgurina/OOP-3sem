@@ -35,6 +35,7 @@ namespace oop12
 
             GKSLog.WriteInLog(FileListLog);
         }
+
         //Создать директорий XXXInspect
         public static void CreateDir(string path)
         {
@@ -53,6 +54,7 @@ namespace oop12
 
             GKSLog.WriteInLog(CreateDirLog);
         }
+
         //создать текстовый файл xxxdirinfo.txt и сохранить туда информацию.
         public static void CreateFile(string path)
         {
@@ -66,7 +68,9 @@ namespace oop12
                 sw.Close();
             }
             CreateFileLog = classLogInfo + "\nФайл создан";
+            GKSLog.WriteInLog(CreateFileLog);
         }
+
         //Создать копию файла и переименовать его. Удалить первоначальный файл.
         public static void CopyFile(string path, string path2)
         {
@@ -112,6 +116,7 @@ namespace oop12
             {
                 CopyFilesLog = classLogInfo + "\nОшибка копирования файлов: " + e.Message;
             }
+
             //переместить XXXFiles в XXXInspect
             try
             {
@@ -131,7 +136,7 @@ namespace oop12
             GKSLog.WriteInLog(CopyFilesLog);
         }
 
-        //Сделайте архив из файлов директория XXXFiles. Разархивируйте его в другой директорий.
+        //Сделайте архив из файлов директория XXXFiles. 
         public static void ZipFiles(string path, string path2, string path3)
         {
             string classLogInfo = "\n=========================================   GKSFileManager - 6   =========================================\n";
@@ -146,6 +151,7 @@ namespace oop12
             {
                 ZipFileLog = classLogInfo + "\nОшибка создания архива: " + e.Message;
             }
+
             //Разархивируйте его в другой директорий.
             try
             {

@@ -11,11 +11,6 @@ namespace oop12
             GKSDiskInfo.GetDiskInfo();
             GKSFileInfo.GetFileInfo();
             GKSDirInfo.GetDirInfo();
-            //GKSFileManager.GKSFiles();
-            //GKSFileManager.MakeArchive();
-            //GKSFileManager.GKSInspect();
-
-
 
             GKSFileManager.GetList(@"F:\");
             GKSFileManager.CreateDir(@"F:\лабы\ООП\labs\oop12\oop12\GKSInspect");
@@ -25,12 +20,12 @@ namespace oop12
             GKSFileManager.ZipFiles(@"F:\лабы\ООП\labs\oop12\oop12\GKSInspect\GKSFiles", @"F:\лабы\ООП\labs\oop12\oop12\GKSInspect\GKSFiles.zip", @"F:\лабы\ООП\labs\oop12\oop12\ForZip");
 
             GKSLog.ReadLog();
-           // GKSLog.SearchLog();
-           // GKSLog.DeleteLogInfo();
+            GKSLog.SearchLog();
+           //GKSLog.DeleteLogInfo();
 
             //GKSLog.FindLogInfo("GKSDiskInfo");
             //GKSLog.FindLogInfoDay(new DateTime(2022, 12, 10, 22, 15, 05));
-            GKSLog.FindLogInfoTime(new DateTime(2022, 12, 10, 22, 15, 05), new DateTime(2022, 12, 10, 22, 37, 10));
+            //GKSLog.FindLogInfoTime(new DateTime(2022, 12, 10, 22, 15, 05), new DateTime(2022, 12, 10, 22, 37, 10));
 
         }
     }

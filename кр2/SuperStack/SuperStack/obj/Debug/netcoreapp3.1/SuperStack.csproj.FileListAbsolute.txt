@@ -1,0 +1,13 @@
+F:\лабы\ООП\кр2\SuperStack\SuperStack\bin\Debug\netcoreapp3.1\SuperStack.exe
+F:\лабы\ООП\кр2\SuperStack\SuperStack\bin\Debug\netcoreapp3.1\SuperStack.deps.json
+F:\лабы\ООП\кр2\SuperStack\SuperStack\bin\Debug\netcoreapp3.1\SuperStack.runtimeconfig.json
+F:\лабы\ООП\кр2\SuperStack\SuperStack\bin\Debug\netcoreapp3.1\SuperStack.runtimeconfig.dev.json
+F:\лабы\ООП\кр2\SuperStack\SuperStack\bin\Debug\netcoreapp3.1\SuperStack.dll
+F:\лабы\ООП\кр2\SuperStack\SuperStack\bin\Debug\netcoreapp3.1\SuperStack.pdb
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.GeneratedMSBuildEditorConfig.editorconfig
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.AssemblyInfoInputs.cache
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.AssemblyInfo.cs
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.dll
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.pdb
+F:\лабы\ООП\кр2\SuperStack\SuperStack\obj\Debug\netcoreapp3.1\SuperStack.genruntimeconfig.cache

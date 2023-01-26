@@ -1,7 +1,4 @@
-------------31.10.2022 3:54:12------------
-TYPE: oop4.WrongDate
-INFO: Exception of type 'oop4.WrongDate' was thrown.
-------------31.10.2022 3:56:59------------
+------------04.11.2022 16:47:31------------
 TYPE: oop4.WrongDate
 INFO: Exception of type 'oop4.WrongDate' was thrown.
 INFO:    at oop4.Program.Main(String[] args) in F:\лабы\ООП\labs\oop5\oop4\oop4\Program.cs:line 175

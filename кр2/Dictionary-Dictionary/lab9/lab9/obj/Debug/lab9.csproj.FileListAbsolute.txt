@@ -1,0 +1,8 @@
+N:\C# Projects\lab9\lab9\bin\Debug\lab9.exe.config
+N:\C# Projects\lab9\lab9\bin\Debug\lab9.exe
+N:\C# Projects\lab9\lab9\bin\Debug\lab9.pdb
+N:\C# Projects\lab9\lab9\obj\Debug\lab9.csproj.AssemblyReference.cache
+N:\C# Projects\lab9\lab9\obj\Debug\lab9.csproj.SuggestedBindingRedirects.cache
+N:\C# Projects\lab9\lab9\obj\Debug\lab9.csproj.CoreCompileInputs.cache
+N:\C# Projects\lab9\lab9\obj\Debug\lab9.exe
+N:\C# Projects\lab9\lab9\obj\Debug\lab9.pdb

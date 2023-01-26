@@ -1,0 +1,15 @@
+N:\C# Projects\oop14\oop14\bin\Debug\oop14.exe.config
+N:\C# Projects\oop14\oop14\bin\Debug\oop14.exe
+N:\C# Projects\oop14\oop14\bin\Debug\oop14.pdb
+N:\C# Projects\oop14\oop14\obj\Debug\oop14.csproj.AssemblyReference.cache
+N:\C# Projects\oop14\oop14\obj\Debug\oop14.csproj.SuggestedBindingRedirects.cache
+N:\C# Projects\oop14\oop14\obj\Debug\oop14.csproj.CoreCompileInputs.cache
+N:\C# Projects\oop14\oop14\obj\Debug\oop14.exe
+N:\C# Projects\oop14\oop14\obj\Debug\oop14.pdb
+F:\лабы\ООП\oop14\oop14\bin\Debug\oop14.exe.config
+F:\лабы\ООП\oop14\oop14\bin\Debug\oop14.exe
+F:\лабы\ООП\oop14\oop14\bin\Debug\oop14.pdb
+F:\лабы\ООП\oop14\oop14\obj\Debug\oop14.csproj.AssemblyReference.cache
+F:\лабы\ООП\oop14\oop14\obj\Debug\oop14.csproj.CoreCompileInputs.cache
+F:\лабы\ООП\oop14\oop14\obj\Debug\oop14.exe
+F:\лабы\ООП\oop14\oop14\obj\Debug\oop14.pdb
